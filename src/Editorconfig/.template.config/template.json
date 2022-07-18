@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "VincentH.NET @ Applicita",
+  "classifications": [
+    "Modern",
+    "CSharp",
+    "C#",
+    "10",
+    "editorconfig"
+  ],
+  "identity": "Modern.CSharp.editorconfig",
+  "name": "Modern C# 10 .editorconfig",
+  "shortName": "mcs-editorconfig",
+  "defaultName": ".editorconfig",
+  "description": "Settings for C# 10 code formatting, style, naming style and analysis. Promotes conciseness, readability and leveraging the latest language features.",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "postActions": [
+    {
+      "description": "Verify .csproj files",
+      "manualInstructions": [
+        {
+          "text": "ensure that below recommended settings are in all .csproj files that are in or below the folder where you created the .editorconfig file:\n\t<PropertyGroup>\n\t\t<Nullable>enable</Nullable>\n\t\t<TreatWarningsAsErrors>true</TreatWarningsAsErrors>\n\t\t<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>\n\t</PropertyGroup>"
+        }
+      ],
+      "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
+      "continueOnError": true
+    }
+  ]
+}
