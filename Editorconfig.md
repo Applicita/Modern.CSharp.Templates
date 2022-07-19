@@ -18,4 +18,4 @@ It is recommended to include below settings are in all `.csproj` files that are 
   </PropertyGroup>
 ```
 
-The rationale for non-default settings is documented in the `.editorconfig` file itself
+The rationale for non-default settings is documented in the `.editorconfig` [file](Editorconfig/.editorconfig) itself
