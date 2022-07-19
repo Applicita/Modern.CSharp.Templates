@@ -1,5 +1,5 @@
-# Version 20220615
-# This file should be placed only in the root of each repository; we do not inherit .editorconfig settings from higher directories
+# Version 20220619
+# This file does not inherit .editorconfig settings from higher directories - where possible, place it at the root of the repository
 
 # References:
 # - To learn more about .editorconfig see https://aka.ms/editorconfigdocs
@@ -14,7 +14,7 @@ root = true
 # All files
 [*]
 indent_style = space
-# Line endings are different from Visual Studio for Windows .editorconfig template defaults; see comments in .gitattributes for rationale
+# Line endings are different from Visual Studio for Windows .editorconfig template defaults; see comments in EOL.gitattributes for rationale
 end_of_line = lf
 
 # Code files
@@ -24,7 +24,7 @@ insert_final_newline = true
 charset = utf-8-bom
 
 ###############################################################
-# Different from VS2019 .NET .editorconfig template defaults  #
+# Different from VS2022 .NET .editorconfig template defaults  #
 # Defaults are left in their original location, commented out #
 # with comment prefix "# Default: <original>"                 #
 ###############################################################

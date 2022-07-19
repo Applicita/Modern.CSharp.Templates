@@ -14,7 +14,6 @@
   "identity": "Modern.CSharp.Orleans.Results",
   "name": "Modern C# 10 result pattern for Orleans 4",
   "shortName": "mcs-orleans-results",
-  //"defaultName": ".editorconfig",
   "description": "Concise, version-tolerant result pattern implementation for Microsoft Orleans 4",
   "tags": {
     "language": "C#",
