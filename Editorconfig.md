@@ -8,7 +8,7 @@ Noteworthy: the naming styles do *not* allow an underscore prefix for private fi
 Usage:
 1) On the command line, ensure that the template is installed:
     ```
-    dotnet new -install Modern.CSharp.Templates
+    dotnet new --install Modern.CSharp.Templates
     ```
 2) in the folder where you want to add the editorconfig, type:
     ```
