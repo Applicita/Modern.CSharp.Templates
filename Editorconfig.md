@@ -6,8 +6,14 @@ Promotes conciseness, readability and leveraging the latest language features.
 Noteworthy: the naming styles do *not* allow an underscore prefix for private fields.
 
 Usage:
-1) Ensure that the template is installed:<br />`dotnet new -install Modern.CSharp.Templates`
-2) On the command line, in the folder where you want to add the editorconfig, type:<br />`dotnet new mcs-editorconfig`
+1) On the command line, ensure that the template is installed:
+    ```
+    dotnet new -install Modern.CSharp.Templates
+    ```
+2) in the folder where you want to add the editorconfig, type:
+    ```
+    dotnet new mcs-editorconfig
+    ```
 
 It is recommended to include below settings are in all `.csproj` files that are in or below the folder where you create the `.editorconfig` file:
 ```xml
