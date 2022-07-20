@@ -6,4 +6,4 @@ Templates:
 
 See the [repo readme](https://github.com/Applicita/Modern.CSharp.Templates#readme) for details.
 
-[Release Notes](TODO url)
+[Release Notes](https://github.com/Applicita/Modern.CSharp.Templates/releases/tag/1-0-0-preview-1)
