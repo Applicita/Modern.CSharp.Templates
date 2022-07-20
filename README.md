@@ -3,4 +3,4 @@ A toolkit of modern dotnet new templates for C# 10, .NET 6, Microsoft Orleans 4 
 
 Templates:
 - Editorconfig [doc](Editorconfig.md)
-- Orleans.Results
+- Orleans.Results [doc](https://github.com/Applicita/Orleans.Results)
