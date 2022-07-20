@@ -11,7 +11,7 @@
 		<Copyright>Copyright © Applicita</Copyright>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/Applicita/Modern.CSharp.Templates</PackageProjectUrl>
-        <PackageIcon>logo-applicita.jpg</PackageIcon>
+        <PackageIcon>CSharp-Toolkit-Icon.png</PackageIcon>
         <PackageReadmeFile>Readme.md</PackageReadmeFile>
 		<PackageReleaseNotes>See source repository for release notes</PackageReleaseNotes>
 		<RepositoryUrl>https://github.com/Applicita/Modern.CSharp.Templates</RepositoryUrl>
@@ -27,12 +27,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Content Include="**\*" Exclude="**\.vs\**;**\bin\**;**\obj\**;Modern.CSharp.Templates.*;logo-applicita.jpg;Readme.md" />
+        <Content Include="**\*" Exclude="**\.vs\**;**\bin\**;**\obj\**;Modern.CSharp.Templates.*;CSharp-Toolkit-Icon.png;Readme.md" />
         <Compile Remove="**\*" />
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="logo-applicita.jpg" Pack="true" PackagePath="\"/>
+        <None Include="CSharp-Toolkit-Icon.png" Pack="true" PackagePath="\"/>
 		<None Include="Readme.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 </Project>
