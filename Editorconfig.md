@@ -1,4 +1,4 @@
-# ![CSharp Toolkit Icon](src/CSharp-Toolkit-Icon.png) Modern.CSharp.Templates - Editorconfig
+# <img src="src/CSharp-Toolkit-Icon.png" alt="C# Toolkit" width="10%" /> Modern.CSharp.Templates - Editorconfig
 
 Settings for C# 10 code formatting, style, naming style and analysis.
 Promotes conciseness, readability and leveraging the latest language features.
