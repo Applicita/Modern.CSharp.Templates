@@ -1,4 +1,4 @@
-# <img src="src/CSharp-Toolkit-Icon.png" alt="C# Toolkit" width="10%" /> Modern.CSharp.Templates
+# <img src="src/CSharp-Toolkit-Icon.png" alt="C# Toolkit" width="64px" /> Modern.CSharp.Templates
 A toolkit of modern dotnet new templates for C# 10, .NET 6 and Microsoft Orleans 4
 
 Templates:
