@@ -1,11 +1,11 @@
 # <img src="src/CSharp-Toolkit-Icon.png" alt="C# Toolkit" width="64px" /> Modern.CSharp.Templates
-A toolkit of modern dotnet new templates for C# 10, .NET 6 and Microsoft Orleans 4
+A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new) for C# 10, .NET 6 and Microsoft Orleans 4
 
 Templates:
 - Editorconfig [doc](Editorconfig.md)
 - Orleans.Results [doc](https://github.com/Applicita/Orleans.Results)
 
-Install: on the command line, type:
+To install, type this on the command line:
 ```
 dotnet new --install Modern.CSharp.Templates
 ```
