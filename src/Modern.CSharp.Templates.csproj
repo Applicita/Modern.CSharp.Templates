@@ -2,10 +2,10 @@
 
     <PropertyGroup>
         <PackageId>Modern.CSharp.Templates</PackageId>
-        <PackageVersion>1.0.0-preview.1</PackageVersion>
+        <PackageVersion>1.0.0-preview.2</PackageVersion>
         <PackageType>Template</PackageType>
         <Title>Modern C# 10 Templates</Title>
-        <Description>A toolkit of modern dotnet new templates for C# 10, .NET 6, Microsoft Orleans 4 and more</Description>
+        <Description>A toolkit of modern dotnet new templates for C# 10, .NET 6 and Microsoft Orleans 4</Description>
         <Authors>VincentH.NET;Applicita</Authors>
         <Company>Applicita</Company>
 		<Copyright>Copyright © Applicita</Copyright>
