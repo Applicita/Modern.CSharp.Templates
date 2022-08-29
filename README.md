@@ -7,7 +7,7 @@ Templates:
 
 To install, type this on the command line:
 ```
-dotnet new --install Modern.CSharp.Templates
+dotnet new --install Modern.CSharp.Templates::1.0.0-preview.2
 ```
 
 [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Modern.CSharp.Templates?color=gold&label=NuGet:%20Modern.CSharp.Templates&style=plastic)](https://www.nuget.org/packages/Modern.CSharp.Templates)
