@@ -1,4 +1,4 @@
-﻿A toolkit of modern dotnet new templates for C# 10, .NET 6 and Microsoft Orleans 4
+﻿A toolkit of modern dotnet new templates for C# 11, .NET 7 and Microsoft Orleans 7
 
 Templates:
 - Editorconfig 
@@ -6,4 +6,4 @@ Templates:
 
 Docs: see the [repo readme](https://github.com/Applicita/Modern.CSharp.Templates#readme)
 
-[Release Notes](https://github.com/Applicita/Modern.CSharp.Templates/releases/tag/1-0-0-preview-2)
+[Release Notes](https://github.com/Applicita/Modern.CSharp.Templates/releases/tag/1-0-0-rc2)
