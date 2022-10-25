@@ -1,4 +1,4 @@
-# Version 20220829
+# Version 20221025
 # This file does not inherit .editorconfig settings from higher directories - where possible, place it at the root of the repository
 
 # References:
@@ -55,8 +55,10 @@ dotnet_style_prefer_is_null_check_over_reference_equality_method = true:warning
 dotnet_style_prefer_inferred_tuple_names = true:warning
 dotnet_style_prefer_inferred_anonymous_type_member_names = true:warning
 dotnet_style_prefer_auto_properties = true:warning
-dotnet_style_prefer_conditional_expression_over_assignment = true:suggestion
-dotnet_style_prefer_conditional_expression_over_return = true:suggestion
+dotnet_style_prefer_conditional_expression_over_assignment = true # We want true:suggestion but that does not work, so we specify the severity in the next line:
+dotnet_diagnostic.IDE0045.severity = suggestion
+dotnet_style_prefer_conditional_expression_over_return = true # We want true:suggestion but that does not work, so we specify the severity in the next line:
+dotnet_diagnostic.IDE0046.severity = suggestion
 
 csharp_style_deconstructed_variable_declaration = true:warning
 csharp_prefer_simple_default_expression = true:warning
