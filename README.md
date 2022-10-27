@@ -3,6 +3,7 @@ A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotn
 
 Templates:
 - Editorconfig [doc](Editorconfig.md)
+  (can also be used with C# 10 / .NET 6)
 - Orleans.Results [doc](https://github.com/Applicita/Orleans.Results)
 
 For how to install, see:<br />
