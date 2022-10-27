@@ -2,8 +2,7 @@
 A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new) for C# 11, .NET 7 and Microsoft Orleans 7
 
 Templates:
-- Editorconfig [doc](Editorconfig.md)
-  (can also be used with C# 10 / .NET 6)
+- Editorconfig [doc](Editorconfig.md) (can also be used with C# 10 / .NET 6)
 - Orleans.Results [doc](https://github.com/Applicita/Orleans.Results)
 
 For how to install, see:<br />
