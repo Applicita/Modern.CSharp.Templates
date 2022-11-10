@@ -8,6 +8,6 @@ Templates:
 For how to install, see:<br />
 [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Modern.CSharp.Templates?color=gold&label=NuGet:%20Modern.CSharp.Templates&style=plastic)](https://www.nuget.org/packages/Modern.CSharp.Templates)
 
-More templates are coming (in Oct 2022):
+More templates are coming (in Nov 2022):
 - Orleans.Multiservice (use a single Orleans service with multiple logical services inside it as an alternative to separate microservices)
 - Orleans.Multitenant (uses [Orleans.Multitenant](https://github.com/Applicita/Orleans.Multitenant) to separate grain state storage and grain/stream communication per tenant)

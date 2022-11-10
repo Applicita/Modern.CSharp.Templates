@@ -24,7 +24,7 @@
       "description": "Update namespace",
       "manualInstructions": [
         {
-          "text": "update the Example namespace in the added ErrorCode.cs and Result.cs files to match your project"
+          "text": "update the Example namespace in the added ErrorNr.cs and Result.cs files to match your project"
         }
       ],
       "actionId": "AC1156F7-BB77-4DB8-B28F-24EEBCCA1E5C",
