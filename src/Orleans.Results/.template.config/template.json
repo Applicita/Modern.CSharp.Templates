@@ -2,14 +2,15 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "VincentH.NET @ Applicita",
   "classifications": [
-    "Modern",
-    "CSharp",
+    "modern",
+    "csharp",
     "C#",
-    "11",
+    "csharp 11",
+    "C# 11",
     "Orleans",
     "Orleans 7",
-    "Results",
-    "Pattern"
+    "results",
+    "pattern"
   ],
   "identity": "Modern.CSharp.Orleans.Results",
   "name": "Modern C# 11 result pattern for Orleans 7",

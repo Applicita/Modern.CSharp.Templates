@@ -2,10 +2,11 @@
   "$schema": "http://json.schemastore.org/template",
   "author": "VincentH.NET @ Applicita",
   "classifications": [
-    "Modern",
-    "CSharp",
+    "modern",
+    "csharp",
     "C#",
-    "11",
+    "csharp 11",
+    "C# 11",
     "editorconfig"
   ],
   "identity": "Modern.CSharp.editorconfig",
