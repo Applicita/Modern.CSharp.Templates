@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "VincentH.NET @ Applicita",
+  "classifications": [
+    "modern",
+    "csharp",
+    "C#",
+    "csharp 11",
+    "C# 11",
+    "Orleans",
+    "Orleans 7",
+    "multiservice",
+    "logical service",
+    "microservice",
+    "service",
+    "pattern"
+  ],
+  "identity": "Modern.CSharp.Orleans.Multiservice",
+  "name": "Modern C# 11 multiservice pattern for Orleans 7",
+  "shortName": "mcs-orleans-multiservice",
+  "description": "Solution for a single Microsoft Orleans 7 (micro)service containing one or more logical services",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+
+  "symbols": {
+    "RootNamespace": {
+      "defaultValue": "",
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "RootNamespacePrefix",
+      "description": "The prefix (without trailing .) for all project root namespaces in the solution.\nConsider using <Company>.<Product|Technology>",
+      "isRequired": true
+    },
+    "Multiservice": {
+      "defaultValue": "",
+      "type": "parameter",
+      "datatype": "string",
+      "fileRename": "MultiserviceName",
+      "replaces": "MultiserviceName",
+      "description": "The name (without 'Service' suffix) of the multiservice\nConsider using <Product|Technology><Team>\nUsed in the name of the solution and as suffix for Apis and Contracts assembly names",
+      "isRequired": false
+    },
+    "Logicalservice": {
+      "defaultValue": "",
+      "type": "parameter",
+      "datatype": "string",
+      "fileRename": "LogicalserviceName",
+      "replaces": "LogicalserviceName",
+      "description": "The name (without 'Service' suffix) of the logical service to add to the solution.\nUsed in the name of the new service project and in new namespaces + classes in the Apis and Contracts projects",
+      "isRequired": true
+    }
+  },
+
+  "primaryOutputs": [ { "path": "LogicalserviceNameService/LogicalserviceNameService.csproj" } ],
+
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(Multiservice == \"\")",
+          "exclude": [
+            "Apis/Foundation/**/*",
+            "Apis/Properties/**/*",
+            "Apis/*.*",
+            "Contracts/Foundation/**/*",
+            "Contracts/*.*",
+            "AddLogicalService.ps1",
+            "MultiserviceName.sln",
+            "Readme.md"
+          ]
+        }
+      ]
+    }
+  ],
+
+  "postActions": [
+    {
+      "description": "Add service project to solution",
+      "manualInstructions": [ { "text": "Add generated project to solution manually" } ],
+      "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
+      "continueOnError": true
+    },
+    {
+      "description": "Add service project reference to Apis project",
+      "manualInstructions": [ { "text": "Manually add a reference to the generated service project in the Apis project" } ],
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "powershell",
+        "args": "-file TemplatePostAction.ps1",
+        "redirectStandardError": false,
+        "redirectStandardOutput": false
+      },
+      "continueOnError": true
+    }
+  ]
+}

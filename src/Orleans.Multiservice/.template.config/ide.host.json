@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json.schemastore.org/vs-2017.3.host",
+  "order": 0,
+  "learnMoreLink": "https://github.com/Applicita/Orleans.Multiservice",
+  "icon": "CSharp-Toolkit-Icon.png"
+}

@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <AnalysisLevel>preview-All</AnalysisLevel>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+
+        <AssemblyName>RootNamespacePrefix.$(MSBuildProjectName).MultiserviceName</AssemblyName>
+        <RootNamespace>RootNamespacePrefix.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Orleans.Persistence.Memory" Version="7.0.0" />
+        <PackageReference Include="Microsoft.Orleans.Sdk" Version="7.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Contracts\Contracts.csproj" />
+    </ItemGroup>
+</Project>
