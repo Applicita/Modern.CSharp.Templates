@@ -39,7 +39,7 @@
       "datatype": "string",
       "fileRename": "MultiserviceName",
       "replaces": "MultiserviceName",
-      "description": "The name (without 'Service' suffix) of the multiservice\nConsider using [<Product|Technology>]<Team name>\nUsed in the name of the solution and as suffix for Apis and Contracts assembly names\nTo add more logical services to an existing multiservice solution, use AddLogicalService.ps1 (or specify --Multiservice .)",
+      "description": "The name (without 'Service' suffix) of the multiservice\nConsider using [<Product|Technology>]<Team name>\nUsed in the name of the solution and as suffix for Apis and Contracts assembly names\nTo add more logical services to an existing multiservice solution, use AddLogicalService.ps1 <name> (or specify --Multiservice .)",
       "isRequired": true
     },
     "Logicalservice": {
