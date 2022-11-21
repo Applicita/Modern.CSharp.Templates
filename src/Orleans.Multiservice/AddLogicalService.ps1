@@ -3,4 +3,4 @@ Param(
     [string]
     $Name
 )
-dotnet new mcs-orleans-multiservice --RootNamespace RootNamespacePrefix --Logicalservice $Name --allow-scripts Yes
+dotnet new mcs-orleans-multiservice --RootNamespace RootNamespacePrefix -M . --Logicalservice $Name --allow-scripts Yes
