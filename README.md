@@ -2,7 +2,7 @@
 A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new) for C# 11, .NET 7 and Microsoft Orleans 7
 
 Templates:
-- **mcs-editorconfig** [doc](Editorconfig.md)<br />
+- **mcs-editorconfig** [doc](https://github.com/Applicita/Modern.CSharp.Templates/blob/main/Editorconfig.md)<br />
   *Settings for C# 11 code formatting, style, naming style and analysis.
 Promotes conciseness, readability and leveraging the latest language features.
 (can also be used with C# 10)*
