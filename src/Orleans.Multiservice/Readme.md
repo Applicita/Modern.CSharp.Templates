@@ -7,4 +7,4 @@ This solution follows the [Multiservice pattern for Microsoft Orleans](https://g
 
 See the [pattern rules](https://github.com/Applicita/Orleans.Multiservice#pattern-rules) for how to structure code in this solution (this will be supported by a Roslyn code analyzer in a later template version).
 
-Use [`AddLogicalService.ps1`](AddLogicalService.ps1) to add more logical services to the solution.
+Use [`AddLogicalService.ps1 <name>`](AddLogicalService.ps1) to add more logical services to the solution.
