@@ -4,6 +4,12 @@
     <OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>preview-All</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
   <ItemGroup Condition="exists('..\UnoWinUIQuickStart.Windows')">
     <EmbeddedResource Include="..\UnoWinUIQuickStart.Windows\Package.appxmanifest" LogicalName="Package.appxmanifest" />
     <Content Include="..\UnoWinUIQuickStart.Windows\Images\StoreLogo.png" />

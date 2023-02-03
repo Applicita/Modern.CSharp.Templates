@@ -4,8 +4,13 @@
 		<TargetFramework>net7.0</TargetFramework>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+    <PropertyGroup>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <AnalysisLevel>preview-All</AnalysisLevel>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    </PropertyGroup>
 
-	<!--#if (WebAssembly)
+    <!--#if (WebAssembly)
 	<ItemGroup>
 		<ProjectReference Include="..\UnoWinUIQuickStart.Wasm\UnoWinUIQuickStart.Wasm.csproj" />
 	</ItemGroup>
