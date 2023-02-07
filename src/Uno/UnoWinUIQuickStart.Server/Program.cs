@@ -1,36 +1,35 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Uno.Wasm.Bootstrap.Server;
 
-namespace UnoWinUIQuickStart
+namespace UnoWinUIQuickStart;
+
+public sealed class Program
 {
-	public sealed class Program
-	{
-		public static void Main(string[] args)
-		{
-			var builder = WebApplication.CreateBuilder(args);
+    public static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-			// Add services to the container.
+        // Add services to the container.
 
-			builder.Services.AddControllers();
+        _ = builder.Services.AddControllers();
 
-			var app = builder.Build();
+        var app = builder.Build();
 
-			// Configure the HTTP request pipeline.
+        // Configure the HTTP request pipeline.
 
-			app.UseAuthorization();
+        _ = app.UseAuthorization();
 
-<!--#if (WebAssembly)
+        /*#if (WebAssembly)
 
-			app.UseUnoFrameworkFiles();
-			app.MapFallbackToFile("index.html");
+                _ = app.UseUnoFrameworkFiles()
+                       .MapFallbackToFile("index.html");
 
-#endif -->
+        #endif */
 
-			app.MapControllers();
-			app.UseStaticFiles();
+        _ = app.MapControllers();
+        _ = app.UseStaticFiles();
 
-			app.Run();
-		}
-	}
+        app.Run();
+    }
 }

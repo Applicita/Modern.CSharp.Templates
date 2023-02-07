@@ -1,11 +1,5 @@
-//-:cnd:noEmit
-using System;
+﻿//-:cnd:noEmit
 using Microsoft.Extensions.Logging;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Navigation;
 
 namespace UnoWinUIQuickStart;
 
@@ -17,20 +11,20 @@ namespace UnoWinUIQuickStart;
 public sealed partial class AppHead : App
 {
     static AppHead()
-		=> InitializeLogging();
+        => InitializeLogging();
 
     /// <summary>
     /// Initializes the singleton application object. This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().
     /// </summary>
     public AppHead()
-		=> this.InitializeComponent();
+        => this.InitializeComponent();
 
     /// <summary>
     /// Configures global Uno Platform logging
     /// </summary>
-    private static void InitializeLogging()
-	{
+    static void InitializeLogging()
+    {
 #if DEBUG
 		// Logging is disabled by default for release builds, as it incurs a significant
 		// initialization cost from Microsoft.Extensions.Logging setup. If startup performance
@@ -93,6 +87,5 @@ public sealed partial class AppHead : App
 		global::Uno.UI.Adapter.Microsoft.Extensions.Logging.LoggingAdapter.Initialize();
 #endif
 #endif
-	}
+    }
 }
-
