@@ -4,11 +4,11 @@
     "text": "Cross-Platform App (WinUI)"
   },
   "description": {
-    "text": "Solution template for creating a cross-platform XAML app with the Uno Platform that targets WinUI 3 for Windows, Android, iOS, macOS, WebAssembly, Skia/WPF, and Skia/GTK for Linux."
+    "text": "Solution template for creating a multi-platform C# application that targets Windows App SDK, Android, iOS, Mac Catalyst, WebAssembly, Skia/Tizen, Skia/WPF, and Skia/GTK for Linux."
   },
   "order": 612,
-  "icon": "uno-logo.png",
-  "learnMoreLink": "https://github.com/unoplatform/uno",
+  "icon": "CSharp-Toolkit-Icon.png",
+  "learnMoreLink": "https://github.com/VincentH-Net/CSharpForMarkup",
   "uiFilters": [
     "oneaspnet"
   ],
