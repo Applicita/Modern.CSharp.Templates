@@ -6,9 +6,12 @@ namespace UnoWinUIQuickStart;
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.
 ///
-/// Your own code may be placed in the UnoWinUIQuickStart/AppBase.cs class.
+/// Code that is not specific to an application head may be placed in the UnoWinUIQuickStart/App.cs class.
 /// </summary>
 public sealed partial class AppHead : App
+#if DEBUG && !HAS_UNO_WASM
+, Core.IBuildUI
+#endif
 {
     static AppHead()
         => InitializeLogging();
@@ -18,7 +21,30 @@ public sealed partial class AppHead : App
     /// executed, and as such is the logical equivalent of main() or WinMain().
     /// </summary>
     public AppHead()
-        => this.InitializeComponent();
+#if DEBUG && WINDOWS && !HAS_UNO_SKIA_WPF
+    {
+        this.InitializeComponent();
+        // TODO: Replace with MetadataUpdateHandler attribute when MS has fixed that for .NET hot reload in WinUI 3
+        HotReloadKeyboardWatcher.Enable(true);
+        HotReloadKeyboardWatcher.CtrlUpAfterS += BuildUI;
+    }
+#else
+     => this.InitializeComponent();
+#endif
+
+#if DEBUG && !HAS_UNO_WASM
+    public void BuildUI()
+    {
+        // Change below code as needed to match your application UI object hierarchy
+        if (MainWindow?.Content is not Microsoft.UI.Xaml.Controls.Frame rootFrame || rootFrame.Content is not Core.IBuildUI buildable)
+            return;
+
+        _ = rootFrame.DispatcherQueue.TryEnqueue(
+            // You can add additional application-specific UI rebuild logic here, e.g. to update styles
+            buildable.BuildUI
+        );
+    }
+#endif
 
     /// <summary>
     /// Configures global Uno Platform logging
