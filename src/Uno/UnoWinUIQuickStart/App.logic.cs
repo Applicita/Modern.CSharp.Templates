@@ -55,7 +55,7 @@ public partial class App : Application
         if (MainWindow.Content is not Frame rootFrame)
         {
             // Create a Frame to act as the navigation context and navigate to the first page
-            rootFrame = new Frame();
+            rootFrame = Markup.UI;
 
             rootFrame.NavigationFailed += OnNavigationFailed;
 
