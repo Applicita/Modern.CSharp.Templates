@@ -1,5 +1,4 @@
 ﻿//-:cnd:noEmit
-using System;
 using Windows.ApplicationModel.Activation;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -77,7 +76,7 @@ public partial class App : Application
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), args.Arguments);
+                rootFrame.Navigate(typeof(Views.MainPage), args.Arguments);
             }
             // Ensure the current window is active
             MainWindow.Activate();

@@ -1,5 +1,4 @@
 ﻿using CSharpMarkup.WinUI;
-using UI = Microsoft.UI.Xaml;
 using Controls = Microsoft.UI.Xaml.Controls;
 using static Microsoft.UI.Colors;
 
