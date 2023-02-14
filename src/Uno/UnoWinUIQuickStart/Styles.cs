@@ -1,11 +1,12 @@
 ﻿using CSharpMarkup.WinUI;
-using Controls = Microsoft.UI.Xaml.Controls;
-using static Microsoft.UI.Colors;
 
 namespace UnoWinUIQuickStart;
 
 public static class Styles
 {
+    // Explicit styles go here - they can follow the same pattern as implicit styles below.
+    // Since Styles is a global static using, you can then e.g. do: Button("<") .Style(HeaderButton)
+
     public static class Implicit
     {
         static UI.ResourceDictionary? dictionary;

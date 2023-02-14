@@ -6,17 +6,21 @@ namespace UnoWinUIQuickStart.Core;
 
 static class MarkupExtensions
 {
-    // TODO: Replace with MetadataUpdateHandler attribute after that works for .NET hot reload in WinUI
-    public static void SetContent(this UI.Controls.Page page, UIElement content) => page.Content =
-    #if DEBUG && !(WINDOWS || HAS_UNO_WASM) // Windows has Ctrl+S support to refresh the page, WASM hot reload breaks the page redraw
-        System.Diagnostics.Debugger.IsAttached
+    public static Page Content(this Page page, UI.UIElement content)
+    {
+        page.UI.Content =
+        // TODO: Remove hot reload button after MS fixes MetadataUpdateHandler attribute for .NET hot reload in all target platforms
+        #if DEBUG && !WINDOWS // Windows has Ctrl+S support in this example to refresh the page, WASM hot reload breaks the page redraw
+        System.Diagnostics.Debugger.IsAttached && RuntimeInformation.OSArchitecture != Architecture.Wasm
         ? Grid(
-            content.UI,
-
+            content,
             Button("\U0001F525") .Top().Right() .Command(new RelayCommand(() => (UI.Application.Current as IBuildUI)?.BuildUI()))
           ).UI
-        : content.UI;
-    #else
-      content.UI;
-    #endif
+        : content;
+        #else
+        content;
+        #endif
+
+        return page;
+    }
 }

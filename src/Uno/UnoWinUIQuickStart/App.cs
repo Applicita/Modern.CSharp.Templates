@@ -5,6 +5,6 @@ namespace UnoWinUIQuickStart;
 
 partial class App
 {
-    static Frame Markup => Frame()
-        .Resources(Styles.Implicit.Dictionary);
+    static Frame RootFrame => Frame()
+        .Resources (Implicit.Dictionary);
 }
