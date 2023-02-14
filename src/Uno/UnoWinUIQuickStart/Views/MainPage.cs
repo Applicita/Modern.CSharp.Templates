@@ -5,7 +5,7 @@ namespace UnoWinUIQuickStart.Views;
 
 sealed partial class MainPage
 {
-    static void Build(Page page) => page.Content(
+    public void BuildUI() => this.Content(
         Grid(
             TextBlock("Hello, world from C# Markup!") .Margin (20) .FontSize (30)
         )
