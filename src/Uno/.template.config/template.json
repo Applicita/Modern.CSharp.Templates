@@ -22,17 +22,17 @@
     "WinUI",
     "dotnet-new"
   ],
-  "name": "Multi-Platform App (Windows App SDK with C# Markup 2)",
-  "identity": "Modern.CSharp.UnoApp.WinUI.netcoremobile",
-  "description": "Template for creating a multi-platform C# application that targets Windows App SDK, Android, iOS, Mac Catalyst, WebAssembly, Skia/Tizen, Skia/WPF, and Skia/GTK for Linux.",
+  "name": "Multi-Platform App (WinUI 3 with C# Markup 2)",
+  "identity": "Modern.CSharp.WinUI3.App",
+  "description": "Template for creating a WinUI 3 C# application that targets Windows and/or (via Uno Platform) Android, iOS, Mac Catalyst, WebAssembly, Skia/Tizen, Skia/WPF, and Skia/GTK for Linux.",
   "precedence": "6001",
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "shortName": "mcs-unoapp",
+  "shortName": "mcs-winui3-app",
   "sourceName": "UnoWinUIQuickStart",
-  "defaultName": "UnoApp",
+  "defaultName": "WinUI3App",
   "placeholderFilename": "template-ignore",
   "preferNameDirectory": true,
   "guids": [
