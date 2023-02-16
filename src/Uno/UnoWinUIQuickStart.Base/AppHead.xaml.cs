@@ -9,9 +9,6 @@ namespace UnoWinUIQuickStart;
 /// Code that is not specific to an application head may be placed in the UnoWinUIQuickStart/App.cs class.
 /// </summary>
 public sealed partial class AppHead : App
-#if DEBUG && !HAS_UNO_WASM
-, Core.IBuildUI
-#endif
 {
     static AppHead()
         => InitializeLogging();
@@ -30,20 +27,6 @@ public sealed partial class AppHead : App
     }
 #else
      => this.InitializeComponent();
-#endif
-
-#if DEBUG && !HAS_UNO_WASM
-    public void BuildUI()
-    {
-        // Change below code as needed to match your application UI object hierarchy
-        if (MainWindow?.Content is not Microsoft.UI.Xaml.Controls.Frame rootFrame || rootFrame.Content is not Core.IBuildUI buildable)
-            return;
-
-        _ = rootFrame.DispatcherQueue.TryEnqueue(
-            // You can add additional application-specific UI rebuild logic here, e.g. to update styles
-            buildable.BuildUI
-        );
-    }
 #endif
 
     /// <summary>

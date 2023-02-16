@@ -6,6 +6,8 @@ namespace UnoWinUIQuickStart;
 
 public static class Styles
 {
+    public static void ClearStyles() => Implicit.ClearStyles();
+
     // Explicit styles go here - they can follow the same pattern as implicit styles below.
     // Since Styles is a global static using, you can then e.g. do: Button("<") .Style(HeaderButton)
 
@@ -21,6 +23,12 @@ public static class Styles
         public static Style<TextBlock> TextBlocks => textBlocks ??= new(
             (Controls.TextBlock.ForegroundProperty, White)
         );
+
+        internal static void ClearStyles()
+        {
+            dictionary = null;
+            textBlocks = null;
+        }
 
         static ResourceDictionary CreateResourceDictionary(params UI.Style[] styles)
         {

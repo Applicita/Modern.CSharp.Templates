@@ -12,6 +12,9 @@ namespace UnoWinUIQuickStart;
 /// Provides application-specific behavior to supplement the default Application class.
 /// </summary>
 public partial class App : Application
+#if DEBUG
+, IBuildUI
+#endif
 {
     /// <summary>
     /// Initializes the singleton application object.  This is the first line of authored code
@@ -23,6 +26,22 @@ public partial class App : Application
     public App()
     {
     }
+
+#if DEBUG
+    public virtual void BuildUI()
+    {
+        // Change below code as needed to match your application UI object hierarchy
+        if (MainWindow?.Content is not Frame rootFrame || rootFrame.Content is not IBuildUI buildable)
+            return;
+
+        _ = rootFrame.DispatcherQueue.TryEnqueue(() => {
+            // You can add additional application-specific UI rebuild logic here
+            ClearStyles();
+            rootFrame.Resources = Implicit.Dictionary;
+            buildable.BuildUI();
+        });
+    }
+#endif
 
     /// <summary>
     /// Gets the main window of the app.
