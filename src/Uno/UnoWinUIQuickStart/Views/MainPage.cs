@@ -3,7 +3,7 @@ using static CSharpMarkup.WinUI.Helpers;
 
 namespace UnoWinUIQuickStart.Views;
 
-sealed partial class MainPage
+partial class MainPage
 {
     public void BuildUI() => this.Content(
         Grid(

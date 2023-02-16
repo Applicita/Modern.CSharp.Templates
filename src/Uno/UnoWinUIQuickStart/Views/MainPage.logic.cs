@@ -2,7 +2,8 @@
 
 namespace UnoWinUIQuickStart.Views;
 
-sealed partial class MainPage : Page, IBuildUI
+[UI.Data.Bindable]
+public sealed partial class MainPage : Page, IBuildUI
 {
     public MainPage() => BuildUI();
 }
