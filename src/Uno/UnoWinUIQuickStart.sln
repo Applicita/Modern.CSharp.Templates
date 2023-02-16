@@ -41,6 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnoWinUIQuickStart.Skia.Lin
 EndProject
 #//#endif
 
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Head", "Head", "{3ABCBC46-CFCA-45EA-A172-D4C1EBCDA6F9}"
+EndProject
+
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		UnoWinUIQuickStart.Shared\UnoWinUIQuickStart.Shared.projitems*{1aa13270-f438-4864-9435-54fd806e10ea}*SharedItemsImports = 5
@@ -458,6 +461,35 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+#//#if (mobile)
+		{$guid2$} = {3ABCBC46-CFCA-45EA-A172-D4C1EBCDA6F9}
+#//#endif
+
+#//#if (WebAssembly)
+		{40EA03F7-8A22-4143-B251-79BAC3EB13D2} = {3ABCBC46-CFCA-45EA-A172-D4C1EBCDA6F9}
+#//#endif
+
+#//#if (WebAssembly)
+		{40EA03F7-8A22-1234-B251-79BAC3EB13D2} = {3ABCBC46-CFCA-45EA-A172-D4C1EBCDA6F9}
+#//#endif
+
+#//#if (skia-gtk)
+		{A5B8155A-118F-4794-B551-C6F3CF7E5411} = {3ABCBC46-CFCA-45EA-A172-D4C1EBCDA6F9}
+#//#endif
+
+#//#if (skia-wpf)
+		{$guid5$} = {3ABCBC46-CFCA-45EA-A172-D4C1EBCDA6F9}
+#//#endif
+
+#//#if (Windows)
+		{1AA13270-F438-4864-9435-54FD806E10EA} = {3ABCBC46-CFCA-45EA-A172-D4C1EBCDA6F9}
+#//#endif
+
+#//#if (skia-linux-fb)
+		{761D821E-9905-4444-9ADF-76C995FE5427} = {3ABCBC46-CFCA-45EA-A172-D4C1EBCDA6F9}
+#//#endif
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7433AE2-B1A0-4C1A-887E-5CAA7AAF67A6}
