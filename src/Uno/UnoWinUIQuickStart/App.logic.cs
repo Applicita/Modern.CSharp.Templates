@@ -3,6 +3,8 @@ using Windows.ApplicationModel.Activation;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
+// IMPORTANT: do NOT use CSharpMarkup.WinUI objects in this UI logic file; only use them in C# markup files
+// See https://github.com/VincentH-Net/CSharpForMarkup#namespace-separation-of-markup-and-ui-logic
 
 namespace UnoWinUIQuickStart;
 
@@ -16,8 +18,7 @@ public partial class App : Application
     /// executed, and as such is the logical equivalent of main() or WinMain().
     /// </summary>
     /// <remarks>
-    /// If you're looking for App.xaml.cs, the file is present in each platform head
-    /// of the solution.
+    /// This is the base class for AppHead, which is present in each platform head project (AppHead.xaml + AppHead.xaml.cs)
     /// </remarks>
     public App()
     {
