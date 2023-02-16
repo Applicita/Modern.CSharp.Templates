@@ -112,7 +112,7 @@
     "WebAssembly": {
       "type": "parameter",
       "dataType": "bool",
-      "defaultValue": "true",
+      "defaultValue": "false",
       "description": "Enables the WebAssembly platform support project"
     },
     "Windows": {
@@ -124,25 +124,25 @@
     "mobile": {
       "type": "parameter",
       "dataType": "bool",
-      "defaultValue": "true",
+      "defaultValue": "false",
       "description": "Enables the Mobile platform support project"
     },
     "skia-wpf": {
       "type": "parameter",
       "dataType": "bool",
-      "defaultValue": "true",
+      "defaultValue": "false",
       "description": "Enables the Skia/WPF platform support project"
     },
     "skia-gtk": {
       "type": "parameter",
       "dataType": "bool",
-      "defaultValue": "true",
+      "defaultValue": "false",
       "description": "Enables the Skia/GTK platform support project"
     },
     "skia-linux-fb": {
       "type": "parameter",
       "dataType": "bool",
-      "defaultValue": "true",
+      "defaultValue": "false",
       "description": "Enables the Skia/Linux Framebuffer platform support project"
     },
     "vscode": {
@@ -167,7 +167,7 @@
       "type": "parameter",
       "datatype": "bool",
       "description": "Enables the ASP.NET Core hosting project",
-      "defaultValue": "true"
+      "defaultValue": "false"
     },
     "android": {
       "type": "generated",
@@ -299,7 +299,7 @@
         {
           "condition": "(!skia-wpf)",
           "exclude": [
-            "UnoWinUIQuickStart.Skia.WPF/UnoWinUIQuickStart.Skia.WPF.csproj"
+            "UnoWinUIQuickStart.Skia.WPF/**/*"
           ]
         },
         {
