@@ -11,7 +11,7 @@ static class MarkupExtensions
         page.Content =
         // TODO: Remove hot reload button after MS fixes MetadataUpdateHandler attribute for .NET hot reload in all target platforms
         #if DEBUG && !WINDOWS // Windows has Ctrl+S support in this example to refresh the page, WASM hot reload breaks the page redraw
-        System.Diagnostics.Debugger.IsAttached && RuntimeInformation.OSArchitecture != Architecture.Wasm
+        System.Diagnostics.Debugger.IsAttached && System.Runtime.InteropServices.RuntimeInformation.OSArchitecture != System.Runtime.InteropServices.Architecture.Wasm
         ? Grid(
             content,
             Button("\U0001F525") .Top().Right() .Command(new RelayCommand(() => (UI.Application.Current as IBuildUI)?.BuildUI()))
