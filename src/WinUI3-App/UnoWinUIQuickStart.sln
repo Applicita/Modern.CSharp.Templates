@@ -44,6 +44,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Head", "Head", "{3ABCBC46-CFCA-45EA-A172-D4C1EBCDA6F9}"
 EndProject
 
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4867196F-51DF-4BB1-B474-4E4CECFADD28}"
+	ProjectSection(SolutionItems) = preProject
+		New-View.ps1 = New-View.ps1
+	EndProjectSection
+EndProject
+
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		UnoWinUIQuickStart.Shared\UnoWinUIQuickStart.Shared.projitems*{1aa13270-f438-4864-9435-54fd806e10ea}*SharedItemsImports = 5

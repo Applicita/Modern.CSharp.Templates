@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "VincentH.NET @ Applicita",
+  "classifications": [
+    "modern",
+    "csharp",
+    "C#",
+    "csharp 11",
+    "C# 11",
+    "View",
+    "MVVM",
+    "CSharpForMarkup",
+    "CSharpMarkup",
+    "Markup",
+    "CSharpMarkup 2",
+    "Multi-platform",
+    "Uno Platform",
+    "Android",
+    "iOS",
+    "Windows",
+    "Mac Catalyst",
+    "Linux",
+    "WebAssembly",
+    "WinUI",
+    "WinUI 3",
+    "dotnet-new"
+  ],
+  "identity": "Modern.CSharp.WinUI3.View",
+  "name": "View (WinUI 3 with C# Markup 2)",
+  "shortName": "mcs-winui3-view",
+  "sourceName": "ViewName",
+  "defaultName": "New",
+  "description": "WinUI 3 C# Markup 2 View item template for use with MCS-WinUI3-App template",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "symbols": {
+    "namespace": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "ViewsNamespace",
+      "description": "The full namespace for the view",
+      "isRequired": true
+    }
+  }
+}
