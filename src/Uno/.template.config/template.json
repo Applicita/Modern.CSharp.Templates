@@ -278,6 +278,12 @@
           ]
         },
         {
+          "condition": "(!Windows)",
+          "exclude": [
+            "UnoWinUIQuickStart.Windows/**"
+          ]
+        },
+        {
           "condition": "(!mobile)",
           "exclude": [
             "UnoWinUIQuickStart.Mobile/**"
@@ -287,13 +293,13 @@
           "condition": "(!WebAssembly)",
           "exclude": [
             "UnoWinUIQuickStart.Server/**",
-            "UnoWinUIQuickStart.Wasm/**",
+            "UnoWinUIQuickStart.Wasm/**"
           ]
         },
         {
           "condition": "(!skia-gtk)",
           "exclude": [
-            "UnoWinUIQuickStart.Skia.Gtk/**",
+            "UnoWinUIQuickStart.Skia.Gtk/**"
           ]
         },
         {
