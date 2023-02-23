@@ -2,6 +2,10 @@
 Param(
     [Parameter(Mandatory, HelpMessage="The view name ('Page' suffix will be added)")]
     [string]
-    $Name
+    $Name,
+
+    [Parameter(HelpMessage="Create a view without a viewmodel")]
+    [switch]
+    $NoViewModel
 )
-dotnet new mcs-winui3-view -n $Name -o UnoWinUIQuickStart\Views --namespace UnoWinUIQuickStart.Views
+dotnet new mcs-winui3-view -n $Name -o UnoWinUIQuickStart\Views --namespace UnoWinUIQuickStart.Views --noviewmodel $NoViewModel

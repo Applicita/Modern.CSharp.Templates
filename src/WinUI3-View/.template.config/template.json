@@ -42,6 +42,26 @@
       "replaces": "ViewsNamespace",
       "description": "The full namespace for the view",
       "isRequired": true
+    },
+    "noviewmodel": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false",
+      "description": "Create a view that has no viewmodel"
     }
-  }
+  },
+  "sources": [
+    {
+      "condition": "(!noviewmodel)",
+      "source": "./WithViewModel",
+      "target": "./",
+      "exclude": "./WithoutViewModel/**"
+    },
+    {
+      "condition": "(noviewmodel)",
+      "source": "./WithoutViewModel",
+      "target": "./",
+      "exclude": "./WithViewModel/**"
+    }
+  ]
 }

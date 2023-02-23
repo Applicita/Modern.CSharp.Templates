@@ -9,7 +9,7 @@ partial class ViewNamePage
 {
     public void BuildUI() => this.Content(
         Grid(
-            TextBlock("MainPage") .Margin (20) .FontSize (30) .Foreground (White)
+            TextBlock("ViewNamePage in C# Markup 2 says: Hello, world!") .Margin (20) .FontSize (30)
         )
     )  .Background (Black);
 }
