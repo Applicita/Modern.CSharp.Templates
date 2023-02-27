@@ -3,7 +3,7 @@ using Windows.ApplicationModel.Activation;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
-// IMPORTANT: do NOT use CSharpMarkup.WinUI objects in this UI logic file; only use them in C# markup files
+// IMPORTANT: do not use CSharpMarkup.WinUI objects in this UI logic file; only use them in C# markup files
 // See https://github.com/VincentH-Net/CSharpForMarkup#namespace-separation-of-markup-and-ui-logic
 
 namespace UnoWinUIQuickStart;
@@ -16,6 +16,8 @@ public partial class App : Application
 , IBuildUI
 #endif
 {
+    Frame? rootFrame;
+
     /// <summary>
     /// Initializes the singleton application object.  This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -31,7 +33,7 @@ public partial class App : Application
     public virtual void BuildUI()
     {
         // Change below code as needed to match your application UI object hierarchy
-        if (MainWindow?.Content is not Frame rootFrame || rootFrame.Content is not IBuildUI buildable)
+        if (rootFrame?.Content is not IBuildUI buildable)
             return;
 
         _ = rootFrame.DispatcherQueue.TryEnqueue(() => {
@@ -71,20 +73,17 @@ public partial class App : Application
 
         // Do not repeat app initialization when the Window already has content,
         // just ensure that the window is active
-        if (MainWindow.Content is not Frame rootFrame)
+        if (MainWindow.Content is null || rootFrame is null)
         {
-            // Create a Frame to act as the navigation context and navigate to the first page
-            rootFrame = RootFrame.UI;
+            // Create a Frame to act as the navigation context and place the frame in the current Window
+            MainWindow.Content = MainWindowContent.UI;
 
-            rootFrame.NavigationFailed += OnNavigationFailed;
+            rootFrame!.NavigationFailed += OnNavigationFailed;
 
             if (args.UWPLaunchActivatedEventArgs.PreviousExecutionState == ApplicationExecutionState.Terminated)
             {
                 // TODO: Load state from previously suspended application
             }
-
-            // Place the frame in the current Window
-            MainWindow.Content = rootFrame;
         }
 
 #if !(NET6_0_OR_GREATER && WINDOWS)
