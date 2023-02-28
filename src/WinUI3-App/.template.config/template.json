@@ -239,6 +239,12 @@
       "dataType": "bool",
       "defaultValue": "false",
       "description": "Omits the .editorconfig used to build this template"
+    },
+    "noopensln": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false",
+      "description": "Skips opening the solution"
     }
   },
   "primaryOutputs": [
@@ -341,7 +347,13 @@
         {
           "condition": "(noeditorconfig)",
           "exclude": [
-            "TemplatePostAction.ps1"
+            "AddMcsEditorConfig.ps1"
+          ]
+        },
+        {
+          "condition": "(noopensln)",
+          "exclude": [
+            "OpenSolution.ps1"
           ]
         }
       ]
@@ -361,16 +373,29 @@
     },
     {
       "condition": "(!noeditorconfig)",
-      "description": "Add the .editorconfig that was used to build this template",
+      "description": "run 'dotnet new mcs-editorconfig' to add the .editorconfig that was used to build this template",
       "manualInstructions": [ { "text": "To add the .editorconfig that was used to build this template, run 'dotnet new mcs-editorconfig'" } ],
       "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
       "args": {
         "executable": "powershell",
-        "args": "-file TemplatePostAction.ps1",
+        "args": "-file AddMcsEditorConfig.ps1",
         "redirectStandardError": false,
         "redirectStandardOutput": false
       },
-      "continueOnError": false
+      "continueOnError": true
+    },
+    {
+      "condition": "(!noopensln)",
+      "description": "Open the solution",
+      "manualInstructions": [ { "text": "Open UnoWinUIQuickStart.sln" } ],
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "powershell",
+        "args": "-file OpenSolution.ps1",
+        "redirectStandardError": false,
+        "redirectStandardOutput": false
+      },
+      "continueOnError": true
     }
   ]
 }

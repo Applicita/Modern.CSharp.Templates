@@ -2,4 +2,4 @@ Start-Sleep -seconds 1 # Workaround to prevent exception from lock on dotnet.exe
 dotnet add Apis/Apis.csproj reference LogicalserviceNameService/LogicalserviceNameService.csproj
 
 Write-Host "Use AddLogicalService.ps1 <name> to add more logical services" -ForegroundColor White -BackgroundColor DarkBlue
-Remove-Item $PSCommandPath -Force
+Remove-Item "$PSCommandPath" -Force
