@@ -10,12 +10,6 @@ namespace UnoWinUIQuickStart.Core;
 
 static class MarkupExtensions
 {
-    public static Page Content(this Controls.Page page, UI.UIElement content) // TODO: move to NuGet
-    {
-        page.Content = content;
-        return page;
-    }
-
     public static UIElement HotReloadOverlay(this Frame rootFrame)
     {
 #if !DEBUG

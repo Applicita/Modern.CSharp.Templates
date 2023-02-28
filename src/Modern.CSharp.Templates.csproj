@@ -2,10 +2,10 @@
 
     <PropertyGroup>
         <PackageId>Modern.CSharp.Templates</PackageId>
-        <PackageVersion>1.1.0</PackageVersion>
+        <PackageVersion>1.2.0</PackageVersion>
         <PackageType>Template</PackageType>
         <Title>Modern C# 11 Templates</Title>
-        <Description>A toolkit of modern dotnet new templates for C# 11, .NET 7 and Microsoft Orleans 7</Description>
+        <Description>A toolkit of modern dotnet new templates for C# 11, .NET 7, Microsoft Orleans 7, Windows App SDK and Uno Platform</Description>
         <Authors>VincentH.NET;Applicita</Authors>
         <Company>Applicita</Company>
 		<Copyright>Copyright © Applicita</Copyright>
@@ -15,7 +15,7 @@
         <PackageReadmeFile>Readme.md</PackageReadmeFile>
 		<PackageReleaseNotes>See source repository for release notes</PackageReleaseNotes>
 		<RepositoryUrl>https://github.com/Applicita/Modern.CSharp.Templates</RepositoryUrl>
-        <PackageTags>dotnet-new;modern;csharp;csharp 11;templates;editorconfig;Orleans;Orleans 7;results;multiservice;microservice;service;pattern;Applicita</PackageTags>
+        <PackageTags>dotnet-new;modern;csharp;csharp 11;templates;editorconfig;Orleans;Orleans 7;results;multiservice;microservice;service;pattern;csharpformarkup,csharpmarkup,markup,csharp,ui,winui,windowsappsdk,uno,webassembly,windows,desktop,Applicita</PackageTags>
         <TargetFramework>netstandard2.0</TargetFramework>
 
         <IncludeContentInPack>true</IncludeContentInPack>

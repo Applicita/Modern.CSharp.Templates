@@ -24,7 +24,7 @@
   ],
   "name": "Multi-Platform App (WinUI 3 with C# Markup 2)",
   "identity": "Modern.CSharp.WinUI3.App",
-  "description": "Template for creating a WinUI 3 C# application that targets Windows and/or (via Uno Platform) Android, iOS, Mac Catalyst, WebAssembly, Skia/Tizen, Skia/WPF, and Skia/GTK for Linux.",
+  "description": "WinUI 3 C# Markup 3 template for creating a C# application that targets Windows (with Windows App SDK) and/or (with Uno Platform) Android, iOS, Mac Catalyst, WebAssembly, Skia/Tizen, Skia/WPF, and Skia/GTK for Linux.",
   "precedence": "6001",
   "tags": {
     "language": "C#",
