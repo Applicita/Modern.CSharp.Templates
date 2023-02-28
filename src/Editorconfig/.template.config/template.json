@@ -18,8 +18,17 @@
     "language": "C#",
     "type": "item"
   },
+  "symbols": {
+    "skipmanualinstructions": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false",
+      "description": "Skips displaying manual instructions when they are not necessary, e.g. when this template is used in combination with other mcs templates"
+    }
+  },
   "postActions": [
     {
+      "condition": "(!skipmanualinstructions)",
       "description": "Verify .csproj files",
       "manualInstructions": [
         {
