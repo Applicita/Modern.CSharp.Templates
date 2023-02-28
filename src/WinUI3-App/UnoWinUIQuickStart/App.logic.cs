@@ -66,6 +66,12 @@ public partial class App : Application
 
 #if NET6_0_OR_GREATER && WINDOWS && !HAS_UNO
 		MainWindow = new Window();
+        {   // Set startup window size
+            nint hWnd = WinRT.Interop.WindowNative.GetWindowHandle(MainWindow);
+            var windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
+            var appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
+            appWindow?.Resize(new(500, 1180));
+        }
 		MainWindow.Activate();
 #else
         MainWindow = Microsoft.UI.Xaml.Window.Current;

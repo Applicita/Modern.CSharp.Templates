@@ -233,6 +233,12 @@
           }
         ]
       }
+    },
+    "noeditorconfig": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false",
+      "description": "Omits the .editorconfig used to build this template"
     }
   },
   "primaryOutputs": [
@@ -331,6 +337,12 @@
             "UnoWinUIQuickStart.Wasm/manifest.webmanifest",
             "UnoWinUIQuickStart.Wasm/Assets/AppIcon-*"
           ]
+        },
+        {
+          "condition": "(noeditorconfig)",
+          "exclude": [
+            "TemplatePostAction.ps1"
+          ]
         }
       ]
     }
@@ -346,6 +358,19 @@
       ],
       "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
       "continueOnError": true
+    },
+    {
+      "condition": "(!noeditorconfig)",
+      "description": "Add the .editorconfig that was used to build this template",
+      "manualInstructions": [ { "text": "To add the .editorconfig that was used to build this template, run 'dotnet new mcs-editorconfig'" } ],
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "powershell",
+        "args": "-file TemplatePostAction.ps1",
+        "redirectStandardError": false,
+        "redirectStandardOutput": false
+      },
+      "continueOnError": false
     }
   ]
 }
