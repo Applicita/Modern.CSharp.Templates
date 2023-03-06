@@ -1,7 +1,7 @@
 # MultiserviceName multiservice
 
 ## The multiservice pattern 
-This solution follows the [Multiservice pattern for Microsoft Orleans](https://github.com/Applicita/Orleans.Multiservice#readme); it was generated with [Modern.CSharp.Templates 1.1.0](https://www.nuget.org/packages/Modern.CSharp.Templates/1.1.0) by this command:
+This solution follows the [Multiservice pattern for Microsoft Orleans](https://github.com/Applicita/Orleans.Multiservice#readme); it was generated with [Modern.CSharp.Templates 1.2.2](https://www.nuget.org/packages/Modern.CSharp.Templates/1.2.2) by this command:
 
 `dotnet new mcs-orleans-multiservice --RootNamespace RootNamespacePrefix --Multiservice MultiserviceName --Logicalservice LogicalserviceName`
 
