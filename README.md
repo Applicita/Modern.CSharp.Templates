@@ -19,7 +19,7 @@ Promotes conciseness, readability and leveraging the latest language features.
 - **mcs-orleans-multiservice** [doc](https://github.com/Applicita/Orleans.Multiservice#readme)<br />
   *Prevent microservices pain with logical service separation for Microsoft Orleans 7*
 
-These templates can be combined with [Orleans.Multitenant](https://github.com/Applicita/Orleans.Multitenant) for secure, flexible tenant separation in Microsoft Orleans 7
+The Orleans templates can be combined with [Orleans.Multitenant](https://github.com/Applicita/Orleans.Multitenant) for secure, flexible tenant separation in Microsoft Orleans 7
 
 For how to install, see:<br />
 [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Modern.CSharp.Templates?color=gold&label=NuGet:%20Modern.CSharp.Templates&style=plastic)](https://www.nuget.org/packages/Modern.CSharp.Templates)

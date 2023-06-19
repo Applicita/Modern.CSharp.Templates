@@ -2,7 +2,7 @@
 
 namespace UnoWinUIQuickStart.Core;
 
-public class BaseViewModel : INotifyPropertyChanged
+public partial class BaseViewModel : INotifyPropertyChanged
 {
 #pragma warning disable CS0067 // Justification: event is used by assembly weaver PropertyChanged.Fody
     public event PropertyChangedEventHandler? PropertyChanged;

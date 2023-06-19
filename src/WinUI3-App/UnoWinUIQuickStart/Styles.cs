@@ -6,15 +6,17 @@ namespace UnoWinUIQuickStart;
 
 public static class Styles
 {
-    public static void ClearStyles() => Implicit.ClearStyles();
-
-    // Explicit styles go here - they can follow the same pattern as implicit styles below.
-    // Since Styles is a global static using, you can then e.g. do: Button("<") .Style(HeaderButton)
-
     // Note:
     // - You can use XAML styles in C# Markup - no need to translate existing XAML styles to C#.
     // - Consider using native C# reuse mechanisms, such as builder functions or classes, instead of C# WinUI styles;
     //   WinUI styles are a primary reuse mechanism in XAML, but C# has more developer friendly alternatives
+
+    public static void ClearStyles() => Implicit.ClearStyles();
+
+#pragma warning disable IDE0002 // Simplify Member Access. Justification: allow to repeat the target class of the style in every setter, for better readability and quicker writing
+
+    // Explicit styles go here - they can follow the same pattern as implicit styles below.
+    // Since Styles is a global static using, you can then e.g. do: Button("<") .Style(HeaderButton)
 
     public static class Implicit
     {
@@ -27,14 +29,16 @@ public static class Styles
         );
 
         public static Style<Button> Buttons => buttons ??= new(
-            (Controls.Control.ForegroundProperty, White),
-            (Controls.Control.FontSizeProperty, 24)
+            (Controls.Button.ForegroundProperty, White),
+            (Controls.Button.FontSizeProperty, 24)
         );
 
         public static Style<TextBlock> TextBlocks => textBlocks ??= new(
             (Controls.TextBlock.ForegroundProperty, White),
             (Controls.TextBlock.FontSizeProperty, 24)
         );
+
+#pragma warning restore IDE0002 // Simplify Member Access
 
         internal static void ClearStyles()
         {
