@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <PackageId>Modern.CSharp.Templates</PackageId>
-        <PackageVersion>1.2.2</PackageVersion>
+        <PackageVersion>1.3.0</PackageVersion>
         <PackageType>Template</PackageType>
         <Title>Modern C# 11 Templates</Title>
         <Description>A toolkit of modern dotnet new templates for C# 11, .NET 7, Microsoft Orleans 7, Windows App SDK and Uno Platform</Description>
