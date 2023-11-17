@@ -1,5 +1,5 @@
 # <img src="src/CSharp-Toolkit-Icon.png" alt="C# Toolkit" width="64px" /> Modern.CSharp.Templates
-A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new) for C# 11, .NET 7, Microsoft Orleans 7, Windows App SDK and Uno Platform
+A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new) for C# 12/11, .NET 8/7, Microsoft Orleans 7, Windows App SDK and Uno Platform 5
 
 Templates:
 - **mcs-editorconfig** [doc](https://github.com/Applicita/Modern.CSharp.Templates/blob/main/Editorconfig.md)<br />
@@ -7,11 +7,8 @@ Templates:
 Promotes conciseness, readability and leveraging the latest language features.
 (can also be used with C# 10)*
 
-- **mcs-winui3-app** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)<br />
-  *WinUI 3 C# Markup 2 application solution template for building browser / native UI with Windows App SDK and/or Uno Platform*
-
-- **mcs-winui3-view** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)<br />
-  *WinUI 3 C# Markup 2 view item template, for use with the `mcs-winui3-app` template via it's `New-View.ps1` command*
+- **mcs-uno-markup2** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)<br />
+  *Project that adds concise C# Markup 2 to a Uno Platform 5 Solution (.NET 8/7)*
 
 - **mcs-orleans-results** [doc](https://github.com/Applicita/Orleans.Results#readme)<br />
   *Concise, version-tolerant result pattern implementation for Microsoft Orleans 7*

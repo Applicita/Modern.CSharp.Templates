@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "VincentH.NET @ InnoWvate.NET",
+  "classifications": [
+    "modern",
+    "csharp",
+    "C#",
+    "csharp 12",
+    "C# 12",
+    "CSharpForMarkup",
+    "C# Markup 2",
+    "CSharpMarkup",
+    "Markup",
+    "CSharpMarkup 2",
+    "Multi-platform",
+    "Uno Platform",
+    "Android",
+    "iOS",
+    "Windows",
+    "Mac Catalyst",
+    "Linux",
+    "WebAssembly",
+    "WinUI",
+    "dotnet-new"
+  ],
+  "identity": "Modern.CSharp.Uno.Markup2",
+  "name": "C# Markup 2 for Uno Platform",
+  "shortName": "mcs-uno-markup2",
+  "description": "Project that adds concise C# Markup 2 to a Uno Platform 5 Solution",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+
+  "symbols": {
+    "AppRootNamespace": {
+      "defaultValue": "",
+      "type": "parameter",
+      "datatype": "string",
+      "fileRename": "UnoCsm2App2",
+      "replaces": "UnoCsm2App2",
+      "description": "The prefix (without trailing .) for the Markup project root namespace.\nSet to the root namespace of your Uno application project",
+      "isRequired": true
+    }
+  },
+
+  "primaryOutputs": [
+    { "path": "UnoCsm2App2.Markup/UnoCsm2App2.Markup.csproj" }
+  ],
+
+  "postActions": [
+    {
+      "description": "Add Markup project to the solution",
+      "manualInstructions": [ { "text": "Add generated project to solution manually" } ],
+      "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
+      "continueOnError": true
+    },
+    {
+      "description": "Add a Markup project reference to the Uno application project, and add NuGet package references to the Markup project",
+      "manualInstructions": [ { "text": "Manually execute the commands in TemplatePostAction.ps1" } ],
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "powershell",
+        "args": "-file TemplatePostAction.ps1",
+        "redirectStandardError": false,
+        "redirectStandardOutput": false
+      },
+      "continueOnError": false
+    }
+  ]
+}

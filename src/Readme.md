@@ -7,13 +7,9 @@ Templates:
 Promotes conciseness, readability and leveraging the latest language features.
 (can also be used with C# 10)*
 
-- **mcs-winui3-app** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)
+- **mcs-uno-markup2** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)
 
-  *WinUI 3 C# Markup 2 application solution template for building browser / native UI with Windows App SDK and/or Uno Platform*
-
-- **mcs-winui3-view** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)
-
-  *WinUI 3 C# Markup 2 view item template, for use with the `mcs-winui3-app` template via it's `New-View.ps1` command*
+  *Project that adds concise C# Markup 2 to a Uno Platform 5 Solution (.NET 7/8)*
 
 - **mcs-orleans-results** [doc](https://github.com/Applicita/Orleans.Results#readme)
 
