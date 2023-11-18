@@ -40,6 +40,12 @@ To start working with the Markup project, follow these steps:
         //...
         new DataViewMap<ExamplePage, ExampleModel, string>() // Add this line
     );
+
+    routes.Register(
+        // ...
+        new RouteMap("Example", View: views.FindByViewModel<ExampleModel>()) // Add this line
+        // ...
+    );
    ```
 
    And finally add these lines in an existing model to navigate to the `ExamplePage`:

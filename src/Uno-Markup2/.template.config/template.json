@@ -83,7 +83,9 @@
       "description": "Add the Markup project to the solution",
       "manualInstructions": [ { "text": "Add generated project to solution manually" } ],
       "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
-      "solutionFolder ": "Source",
+      "args": {
+        "solutionFolder": "Source"
+      },
       "continueOnError": true
     },
     {
