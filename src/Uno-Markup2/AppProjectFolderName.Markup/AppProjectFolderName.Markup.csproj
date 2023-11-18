@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>NamespacePrefix.Markup</RootNamespace>
+
+    <!-- The TargetFrameworks should be the same as in your Uno application project; copy all TargetFrameworks elements from your Uno application project below -->
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true'">$(TargetFrameworks);netDotNetMonikerVersion-windows10.0.19041</TargetFrameworks>
+    <TargetFrameworks>$(TargetFrameworks);netDotNetMonikerVersion;netDotNetMonikerVersion-android;netDotNetMonikerVersion-ios;netDotNetMonikerVersion-maccatalyst</TargetFrameworks>
+    <TargetFrameworks Condition="'$(OverrideTargetFrameworks)'!=''">$(OverrideTargetFrameworks)</TargetFrameworks>
+
+    <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
+
+    <!-- Prevent false positives for warning CA1416; see https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1416 -->
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".filenesting.json" />
+  </ItemGroup>
+</Project>

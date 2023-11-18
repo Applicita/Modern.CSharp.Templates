@@ -1,13 +1,15 @@
-﻿namespace UnoCsm2App2.Markup;
+﻿namespace NamespacePrefix.Markup;
 
 partial class ExamplePage
 {
-    public void BuildUI() => this.Content(
+    public void BuildUI() => Content (
         Grid (
             Rows(Auto, Star),
 
             NavigationBar("C# Markup 2 for Uno ExamplePage")
-               .MainCommand(AppBarButton().Icon(Icon("Icons/back"))),
+               .MainCommand (
+                   AppBarButton() .Icon(Icon("Icons/back"))
+                ),
  
             StackPanel (
                 TextBlock() .Bind(vm?.Text)

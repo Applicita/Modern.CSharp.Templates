@@ -1,4 +1,4 @@
-﻿namespace UnoCsm2App2.Markup;
+﻿namespace NamespacePrefix.Markup;
 
 [UIBindable]
 public sealed partial class ExamplePage : BasePage<ExampleModel>, IBuildUI

@@ -1,4 +1,4 @@
-﻿A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new) for C# 11, .NET 7, Microsoft Orleans 7, Windows App SDK and Uno Platform
+﻿A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new) for C# 12/11, .NET 8/7, Microsoft Orleans 7, Windows App SDK and Uno Platform
 
 Templates:
 - **mcs-editorconfig** [doc](https://github.com/Applicita/Modern.CSharp.Templates/blob/main/Editorconfig.md)

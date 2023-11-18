@@ -4,7 +4,7 @@ global using CSharpMarkup.WinUI.Uno.Extensions.Navigation;
 global using CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit;
 global using CSharpMarkup.WinUI.Uno.Extensions.Reactive;
 global using CSharpMarkup.WinUI.Uno.Toolkit;
-global using UnoCsm2App2.Markup.Core;
+global using NamespacePrefix.Markup.Core;
 
 // Include markup helpers:
 global using static CSharpMarkup.WinUI.Helpers;
@@ -12,7 +12,7 @@ global using static CSharpMarkup.WinUI.Uno.Extensions.Navigation.Helpers;
 global using static CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit.Helpers;
 global using static CSharpMarkup.WinUI.Uno.Extensions.Reactive.Helpers;
 global using static CSharpMarkup.WinUI.Uno.Toolkit.Helpers;
-global using static UnoCsm2App2.Markup.Core.MarkupHelpers;
+global using static NamespacePrefix.Markup.Core.MarkupHelpers;
 
 // Aliases for WinUI namespaces and types
 // - Use to avoid including WinUI namespaces, which can cause ambiguities with the CSharpMarkup namespaces

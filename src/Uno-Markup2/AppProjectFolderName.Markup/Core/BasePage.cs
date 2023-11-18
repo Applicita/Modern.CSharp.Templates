@@ -1,6 +1,6 @@
 ﻿using Microsoft.UI.Xaml.Navigation;
 
-namespace UnoCsm2App2.Markup.Core;
+namespace NamespacePrefix.Markup.Core;
 
 public abstract partial class BasePage<TViewModel> : BasePage where TViewModel : class
 {
@@ -16,11 +16,13 @@ public abstract partial class BasePage : UIControls.Page
 
     new public BasePage Content(UI.Xaml.UIElement content)
     {
+//-:cnd:noEmit
 #if DEBUG
         _ = this.Content(overlayDevTools: true, content: content);
 #else
         _ = this.Content(overlayDevTools: false, content: content);
 #endif
+//+:cnd:noEmit
         return this;
     }
 }
