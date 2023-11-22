@@ -15,15 +15,23 @@ To start working with the Markup project, follow these steps:
 1. Copy all `<TargetFrameworks ... />` elements from your Uno application project file to your markup project file; they should be identical
    (by default the markup project targets all platforms supported by Uno).
 
-   **TIP** If you get a lot of green squiggles while editing the Uno application project's `.cs` files, ensure that the Uno application project contains this property setting (it is already in the Markup project):
+   **TIP** If you get a lot of green squiggles from warning `CA1416` while editing `.cs` files, and you see these lines in  `Directory.Build.props`:
+
    ```xml
-    <PropertyGroup>
-        <!-- Prevent false positives for warning CA1416; see https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1416 -->
-        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
-    </PropertyGroup>
+    <!-- Required for Hot Reload (See https://github.com/unoplatform/uno.templates/issues/376) -->
+    <GenerateAssemblyInfo Condition="'$(Configuration)'=='Debug'">false</GenerateAssemblyInfo>
    ```
 
-2. By default the Markup project uses the Uno extensions for [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) and [navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Navigation/NavigationOverview.html). If you made different choices in the [Uno Platform Solution Template Wizard](https://platform.uno/docs/articles/get-started-vs-2022.html#install-the-solution-templates), or made changes afterwards, remove any unused NuGet packages from the Markup project (the `CSharpMarkup.WinUI.Uno.*` package names correspond 1 on 1 with `Uno.*` package names).
+   replace them with:
+
+   ```xml
+    <!-- Workaround to prevent Hot Reload failures in some scenario's 
+         See https://github.com/dotnet/sdk/issues/36666#issuecomment-1814835637
+         Note that this will be fixed in the next .NET SDK release; this workaround can be removed after updating -->
+    <EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
+   ```
+
+2. By default the Markup project uses the Uno extensions for [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) and [navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Navigation/NavigationOverview.html). If you made different choices in the [Uno Platform Solution Template Wizard](https://platform.uno/docs/articles/get-started-vs-2022.html#install-the-solution-templates), or made changes afterwards, you can remove the example code and any unused NuGet packages from the Markup project (the `CSharpMarkup.WinUI.Uno.*` package names correspond 1 on 1 with `Uno.*` package names).
 
 3. To quickly try out the `ExamplePage`, add it to your navigation.
    
@@ -38,12 +46,12 @@ To start working with the Markup project, follow these steps:
    ```csharp
     views.Register(
         //...
-        new DataViewMap<ExamplePage, ExampleModel, string>() // Add this line
+        new DataViewMap<ExamplePage, BindableExampleModel, string>() // Add this line
     );
 
     routes.Register(
         // ...
-        new RouteMap("Example", View: views.FindByViewModel<ExampleModel>()) // Add this line
+        new RouteMap("Example", View: views.FindByViewModel<BindableExampleModel>()) // Add this line
         // ...
     );
    ```
@@ -54,16 +62,20 @@ To start working with the Markup project, follow these steps:
    ```
    ...
    ```csharp
-    await _navigator.NavigateViewModelAsync<ExampleModel>(this, data: "Hello World from C# Markup 2!");
+    await _navigator.NavigateViewModelAsync<BindableExampleModel>(this, data: "Hello World from C# Markup 2!");
    ```
+
+   **NOTE** As a workaround for [this Uno issue](https://github.com/unoplatform/uno.extensions/issues/924#issuecomment-1822337527), we are using the generated `Bindable*` model type in above lines, instead of the model type itself. After this gets fixed, you can use the model type instead of the bindable model type.
 
 ## Add more pages
 Initially the `ExamplePage` serves as a template. Once you have your own pages, you can use those as templates and remove the `Example*.cs` files.
 1. Copy, paste and rename `ExamplePage.cs`; your IDE should include `ExamplePage.logic.cs` automatically.
 2. Manually rename the `ExamplePage` class in the copied files (automatic rename would rename the class in the original files as well).
 
-## Hot Reload - Automatic & Manual
+## C# Hot Reload - Automatic & Manual
 Enjoy the fastest and most stable C# Hot Reload, with automatic UI updates, by debugging the **Unpackaged** Windows target. This is a good reason to keep the Windows target even if you don't deploy it.
+
+C# Hot Reload does work to some extent in more target platforms, however the UI does not yet update automatically in all platforms, due to issues in Visual Studio.
 
 The template contains code to overlay a 🔥 button in debug builds. This button lets you manually trigger a page rebuild, for cases where the IDE reports that C# hot reload succeeded but the UI does not update automatically.
 

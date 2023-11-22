@@ -9,9 +9,6 @@
 
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
-
-    <!-- Prevent false positives for warning CA1416; see https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1416 -->
-    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <ItemGroup>
