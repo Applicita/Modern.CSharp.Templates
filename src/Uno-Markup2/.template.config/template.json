@@ -1,13 +1,17 @@
 {
+  // Aligned with https://github.com/unoplatform/uno.templates/blob/main/src/Uno.Templates/content/unoapp/.template.config/template.json
   "$schema": "http://json.schemastore.org/template",
   "author": "VincentH.NET @ InnoWvate.NET",
   "classifications": [
-    "C# Markup",
     "C# Markup 2",
+    "C# Markup",
+    "Uno C# Markup",
     "CSharpForMarkup",
     "CSharpMarkup",
     "Markup",
     "CSharpMarkup 2",
+    "MVUX",
+    "MVVM",
     "modern",
     "csharp",
     "C#",
@@ -17,88 +21,143 @@
     "Uno Platform",
     "Android",
     "iOS",
-    "Windows",
+    "macOS",
     "Mac Catalyst",
+    "Windows",
     "Linux",
     "WebAssembly",
-    "Windows App SDK",
-    "WinUI",
-    "dotnet-new"
+    "WinUI"
   ],
-  "identity": "Modern.CSharp.Uno.Markup2",
   "name": "C# Markup 2 for Uno Platform",
+  "identity": "Modern.CSharp.Uno.Markup2",
   "shortName": "mcs-uno-markup2",
-  "description": "Project that adds concise C# Markup 2 to a Uno Platform 5 Solution",
+  "description": "Project template that adds concise C# Markup 2 to a Uno Platform 5 Solution",
+  "sourceName": "AppProjectFolderName",
+  "defaultName": "UnoApp",
   "tags": {
     "language": "C#",
     "type": "project"
   },
 
   "symbols": {
-    "AppProjectName": {
-      "defaultValue": "",
+    "appRootNamespace": {
+      "displayName": "App Root Namespace",
       "type": "parameter",
       "datatype": "string",
-      "fileRename": "AppProjectFolderName",
-      "replaces": "AppProjectFolderName",
-      "description": "The folder name of the existing Uno app project (the project that contains App.cs).\nAlso used for the app project file name and the app assembly file name.",
-      "isRequired": true
+      "description": "The root namespace (without trailing .) of your Uno application project (the project that contains App.cs).\nUsed as prefix for the Presentation project root namespace."
     },
-    "AppRootNamespace": {
-      "defaultValue": "",
-      "type": "parameter",
-      "datatype": "string",
-      "replaces": "NamespacePrefix",
-      "description": "The root namespace (without trailing .) of your Uno application project (the project that contains App.cs).\nUsed as prefix for the Markup project root namespace.",
-      "isRequired": true
+    "appRootNamespaceEvaluator": {
+      "type": "generated",
+      "generator": "coalesce",
+      "parameters": {
+        "sourceVariableName": "appRootNamespace",
+        "fallbackVariableName": "name"
+      },
+      "replaces": "$namespacePrefix$"
     },
-    "DotNetVersion": {
-      "defaultValue": "8.0",
+    "tfm": {
+      "displayName": "Target Framework",
       "type": "parameter",
       "datatype": "choice",
       "enableQuotelessLiterals": true,
-      "replaces": "DotNetMonikerVersion",
-      "description": "Which .NET version to use in target platforms",
-      "isRequired": true,
-
+      "replaces": "$baseTargetFramework$",
+      "defaultValue": "net8.0",
+      "description": "Select the .NET version of your solution",
       "choices": [
         {
-          "choice": "7.0",
-          "description": "Target all Uno supported platforms on .NET 7.0"
+          "choice": "net7.0",
+          "displayName": ".NET 7.0",
+          "description": "Target .NET 7.0 (Standard Term Support)"
         },
         {
-          "choice": "8.0",
-          "description": "Target all Uno supported platforms on .NET 8.0"
+          "choice": "net8.0",
+          "displayName": ".NET 8.0",
+          "description": "Target .NET 8.0 (Long Term Support)"
         }
       ]
+    },
+    "architecture": {
+      "displayName": "Presentation",
+      "description": "Select the design pattern for your application",
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "none",
+          "description": "No additional presentation framework",
+          "displayName": "None"
+        },
+        {
+          "choice": "mvvm",
+          "description": "Use the Model-View-ViewModel (MVVM) design pattern",
+          "displayName": "MVVM"
+        },
+        {
+          "choice": "mvux",
+          "description": "Use the Model-View-Update eXtended (MVUX) design pattern",
+          "displayName": "MVUX"
+        }
+      ],
+      "defaultValue": "mvux"
     }
   },
 
   "primaryOutputs": [
-    { "path": "AppProjectFolderName.Markup/AppProjectFolderName.Markup.csproj" }
+    { "path": "AppProjectFolderName.Presentation/AppProjectFolderName.Presentation.csproj" }
   ],
 
-  "postActions": [
+  "sources": [
+    // *** HERE: test whether need to include other AppProjectFolderName.Presentation source files here that are not in architecture-* subfolder
     {
-      "description": "Add the Markup project to the solution",
-      "manualInstructions": [ { "text": "Add generated project to solution manually" } ],
-      "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
-      "args": {
-        "solutionFolder": "Source"
-      },
-      "continueOnError": true
+      "condition": "(architecture == 'none')",
+      "source": "./AppProjectFolderName.Presentation/Example.None",
+      "target": "./AppProjectFolderName.Presentation/Example/",
+      "exclude": [
+        "./AppProjectFolderName.Presentation/Example.Mvux/**",
+        "./AppProjectFolderName.Presentation/Example.Mvvm/**"
+      ]
     },
     {
-      "description": "Add NuGet package references to the Markup project, and add a Markup project reference to the Uno application project",
-      "manualInstructions": [ { "text": "Manually execute the commands in AddPackageAndProjectReferences.ps1" } ],
-      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-      "args": {
-        "executable": "powershell",
-        "args": "-file AddPackageAndProjectReferences.ps1",
-        "redirectStandardError": false,
-        "redirectStandardOutput": false
-      },
-      "continueOnError": false
+      "condition": "(architecture == 'mvux')",
+      "source": "./AppProjectFolderName.Presentation/Example.Mvux",
+      "target": "./AppProjectFolderName.Presentation/Example/",
+      "exclude": [
+        "./AppProjectFolderName.Presentation/Example.None/**",
+        "./AppProjectFolderName.Presentation/Example.Mvvm/**"
+      ]
+    },
+    {
+      "condition": "(architecture == 'mvvm')",
+      "source": "./AppProjectFolderName.Presentation/Example.Mvvm",
+      "target": "./AppProjectFolderName.Presentation/Example/",
+      "exclude": [
+        "./AppProjectFolderName.Presentation/Example.None/**",
+        "./AppProjectFolderName.Presentation/Example.Mvux/**"
+      ]
     }
-  ]
+  ]//,
+
+  //"postActions": [
+  //  {
+  //    "description": "Add the Presentation project to the solution",
+  //    "manualInstructions": [ { "text": "Add the generated Presentation project to solution manually" } ],
+  //    "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
+  //    "args": {
+  //      "solutionFolder": "Source"
+  //    },
+  //    "continueOnError": true
+  //  },
+  //  {
+  //    "description": "Add NuGet package references to the Presentation project, and add a Presentation project reference to the Uno application project",
+  //    "manualInstructions": [ { "text": "Manually execute the commands in AddPackageAndProjectReferences.ps1" } ],
+  //    "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+  //    "args": {
+  //      "executable": "powershell",
+  //      "args": "-file AddPackageAndProjectReferences.ps1",
+  //      "redirectStandardError": false,
+  //      "redirectStandardOutput": false
+  //    },
+  //    "continueOnError": false
+  //  }
+  //]
 }

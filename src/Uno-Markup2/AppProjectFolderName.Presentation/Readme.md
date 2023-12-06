@@ -1,19 +1,13 @@
 ﻿# Welcome to C# Markup 2 for Uno Platform
 
-This C# Markup 2 project was created with the command:
+This C# Markup 2 Presentation project was created with the `dotnet new mcs-uno-markup2` template from [`Modern.CSharp.Templates 1.4.2`](https://www.nuget.org/packages/Modern.CSharp.Templates/1.4.2)
 
-```bat
-dotnet new mcs-uno-markup2 --AppProjectName AppProjectFolderName --AppRootNamespace NamespacePrefix --DotNetVersion DotNetMonikerVersion
-```
+## Test the AppProjectFolderName.Presentation project
 
-The `mcs-uno-markup2` template used came from NuGet `Modern.CSharp.Templates` version 1.4.2
+To start working with the C# Markup 2 project, follow these steps:
 
-## Test the Markup project
-
-To start working with the Markup project, follow these steps:
-
-1. Copy all `<TargetFrameworks ... />` elements from your Uno application project file to your markup project file; they should be identical
-   (by default the markup project targets all platforms supported by Uno).
+1. Copy all `<TargetFrameworks ... />` elements from `AppProjectFolderName.csproj` to `AppProjectFolderName.Presentation.csproj` project file; they should have the same target frameworks
+   (by default the C# Markup 2 project targets all platforms supported by Uno).
 
    **TIP** If you get a lot of green squiggles from warning `CA1416` while editing `.cs` files, and you see these lines in  `Directory.Build.props`:
 
@@ -31,7 +25,7 @@ To start working with the Markup project, follow these steps:
     <EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
    ```
 
-2. By default the Markup project uses the Uno extensions for [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) and [navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Navigation/NavigationOverview.html). If you made different choices in the [Uno Platform Solution Template Wizard](https://platform.uno/docs/articles/get-started-vs-2022.html#install-the-solution-templates), or made changes afterwards, you can remove the example code and any unused NuGet packages from the Markup project (the `CSharpMarkup.WinUI.Uno.*` package names correspond 1 on 1 with `Uno.*` package names).
+2. By default the C# Markup 2 project uses the Uno extensions for [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) and [navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Navigation/NavigationOverview.html). If you made different choices in the Uno Platform [solution template wizard](https://platform.uno/docs/articles/get-started-vs-2022.html#install-the-solution-templates) or the [dotnet new template](https://platform.uno/docs/articles/get-started-dotnet-new.html?tabs=net7%2Cwindows#uno-platform-application), or made changes afterwards, you can remove the example code and any unused NuGet packages from the Markup project (the `CSharpMarkup.WinUI.Uno.*` package names correspond 1 on 1 with `Uno.*` package names).
 
 3. To quickly try out the `ExamplePage`, add it to your navigation.
    
@@ -39,7 +33,7 @@ To start working with the Markup project, follow these steps:
    
    At the top:
    ```csharp
-   using NamespacePrefix.Markup;
+   using $namespacePrefix$.Presentation;
    ```
 
    In the `RegisterRoutes` method:
@@ -58,7 +52,7 @@ To start working with the Markup project, follow these steps:
 
    And finally add these lines in an existing model to navigate to the `ExamplePage`:
    ```csharp
-   using NamespacePrefix.Markup;
+   using $namespacePrefix$.Presentation;
    ```
    ...
    ```csharp

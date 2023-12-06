@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "VincentH.NET @ Applicita",
+  "classifications": [
+    "C# Markup 2",
+    "C# Markup",
+    "Uno C# Markup",
+    "CSharpForMarkup",
+    "CSharpMarkup",
+    "Markup",
+    "CSharpMarkup 2",
+    "View",
+    "Page",
+    "MVUX",
+    "MVVM",
+    "modern",
+    "csharp",
+    "C#",
+    "csharp 12",
+    "C# 12",
+    "Multi-platform",
+    "Uno Platform",
+    "Android",
+    "iOS",
+    "Windows",
+    "Mac Catalyst",
+    "Linux",
+    "WebAssembly",
+    "Windows App SDK",
+    "WinUI",
+    "dotnet-new"
+  ],
+  "identity": "Modern.CSharp.Uno.Markup2.View",
+  "name": "View (WinUI 3 with C# Markup 2)",
+  "shortName": "mcs-uno-view",
+  "sourceName": "ViewName",
+  "defaultName": "New",
+  "description": "C# Markup 2 View + Model item template for use with mcs-uno-markup2 template",
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  },
+  "symbols": {
+    "namespace": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "ViewsNamespace",
+      "description": "The full namespace for the view",
+      "isRequired": true
+    },
+    "presentation": {
+      "description": "Select the model type for the view",
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "none",
+          "description": "No model",
+          "displayName": "None"
+        },
+        {
+          "choice": "mvvm",
+          "description": "Use the Model-View-ViewModel (MVVM) design pattern",
+          "displayName": "MVVM"
+        },
+        {
+          "choice": "mvux",
+          "description": "Use the Model-View-Update eXtended (MVUX) design pattern",
+          "displayName": "MVUX"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "condition": "(presentation == 'none')",
+      "source": "./Presentation-none",
+      "target": "./",
+      "exclude": [
+        "./Presentation-mvux/**",
+        "./Presentation-mvvm/**"
+      ]
+    },
+    {
+      "condition": "(presentation == 'mvux')",
+      "source": "./Presentation-mvux",
+      "target": "./",
+      "exclude": [
+        "./Presentation-none/**",
+        "./Presentation-mvvm/**"
+      ]
+    },
+    {
+      "condition": "(presentation == 'mvvm')",
+      "source": "./Presentation-mvvm",
+      "target": "./",
+      "exclude": [
+        "./Presentation-none/**",
+        "./Presentation-mvux/**"
+      ]
+    }
+  ]
+}
