@@ -1,7 +1,7 @@
 Start-Sleep -seconds 1 # Workaround to prevent exception from lock on dotnet.exe log file when nesting dotnet.exe invocations (log filename includes current time down to seconds)
 
 $appProjectPath    = "AppProjectFolderName/AppProjectFolderName.csproj"
-$markupProjectPath = "AppProjectFolderName.Presentation/AppProjectFolderName.Pesentation.csproj"
+$markupProjectPath = "AppProjectFolderName.Presentation/AppProjectFolderName.Presentation.csproj"
 $packageNames = @(
     "CSharpMarkup.WinUI",
     "CSharpMarkup.WinUI.Uno.Extensions.Navigation",

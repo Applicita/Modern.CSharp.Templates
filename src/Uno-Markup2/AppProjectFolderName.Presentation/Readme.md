@@ -2,69 +2,36 @@
 
 This C# Markup 2 Presentation project was created with the `dotnet new mcs-uno-markup2` template from [`Modern.CSharp.Templates 1.4.2`](https://www.nuget.org/packages/Modern.CSharp.Templates/1.4.2)
 
-## Test the AppProjectFolderName.Presentation project
+## Get Started
 
 To start working with the C# Markup 2 project, follow these steps:
 
 1. Copy all `<TargetFrameworks ... />` elements from `AppProjectFolderName.csproj` to `AppProjectFolderName.Presentation.csproj` project file; they should have the same target frameworks
    (by default the C# Markup 2 project targets all platforms supported by Uno).
 
-   **TIP** If you get a lot of green squiggles from warning `CA1416` while editing `.cs` files, and you see these lines in  `Directory.Build.props`:
-
-   ```xml
-    <!-- Required for Hot Reload (See https://github.com/unoplatform/uno.templates/issues/376) -->
-    <GenerateAssemblyInfo Condition="'$(Configuration)'=='Debug'">false</GenerateAssemblyInfo>
-   ```
-
-   replace them with:
-
-   ```xml
-    <!-- Workaround to prevent Hot Reload failures in some scenario's 
-         See https://github.com/dotnet/sdk/issues/36666#issuecomment-1814835637
-         Note that this will be fixed in the next .NET SDK release; this workaround can be removed after updating -->
-    <EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
-   ```
-
-2. By default the C# Markup 2 project uses the Uno extensions for [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) and [navigation](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Navigation/NavigationOverview.html). If you made different choices in the Uno Platform [solution template wizard](https://platform.uno/docs/articles/get-started-vs-2022.html#install-the-solution-templates) or the [dotnet new template](https://platform.uno/docs/articles/get-started-dotnet-new.html?tabs=net7%2Cwindows#uno-platform-application), or made changes afterwards, you can remove the example code and any unused NuGet packages from the Markup project (the `CSharpMarkup.WinUI.Uno.*` package names correspond 1 on 1 with `Uno.*` package names).
-
-3. To quickly try out the `ExamplePage`, add it to your navigation.
+2. To quickly try out the C# Markup 2 `Example`, add it to your navigation.
    
-   If you are using `Uno.Extensions.Navigation`, you can do this by adding these lines in `App.cs`:
+   If you are using `Uno.Extensions.Navigation`, you can do this in `App.cs`:
    
-   At the top:
+   At the top, add:
    ```csharp
-   using $namespacePrefix$.Presentation;
+   using CsMarkup2Example = $namespacePrefix$.Presentation.CsMarkup2Example;
    ```
 
-   In the `RegisterRoutes` method:
+   In the `.UseNavigation` call, pass in `CsMarkup2Example.Routes.Register` for the `viewRouteBuilder`:
    ```csharp
-    views.Register(
-        //...
-        new DataViewMap<ExamplePage, BindableExampleModel, string>() // Add this line
-    );
-
-    routes.Register(
-        // ...
-        new RouteMap("Example", View: views.FindByViewModel<BindableExampleModel>()) // Add this line
-        // ...
-    );
+   .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, CsMarkup2Example.Routes.Register)
    ```
 
-   And finally add these lines in an existing model to navigate to the `ExamplePage`:
+   And finally specify `CsMarkup2Example.Shell` in the `builder.NavigateAsync` call:
    ```csharp
-   using $namespacePrefix$.Presentation;
-   ```
-   ...
-   ```csharp
-    await _navigator.NavigateViewModelAsync<BindableExampleModel>(this, data: "Hello World from C# Markup 2!");
+   Host = await builder.NavigateAsync<CsMarkup2Example.Shell>();
    ```
 
-   **NOTE** As a workaround for [this Uno issue](https://github.com/unoplatform/uno.extensions/issues/924#issuecomment-1822337527), we are using the generated `Bindable*` model type in above lines, instead of the model type itself. After this gets fixed, you can use the model type instead of the bindable model type.
+**Note** that for the `Windows` project it may be necessary to rebuild it once, to ensure that the Windows codegen for new pages is triggered (without that codegen you will get a memory access exception on page display).
 
-## Add more pages
-Initially the `ExamplePage` serves as a template. Once you have your own pages, you can use those as templates and remove the `Example*.cs` files.
-1. Copy, paste and rename `ExamplePage.cs`; your IDE should include `ExamplePage.logic.cs` automatically.
-2. Manually rename the `ExamplePage` class in the copied files (automatic rename would rename the class in the original files as well).
+## Add views and (view)models
+You can use `New-View.ps1` (located in the `AppProjectFolderName.Presentation` project folder) to quickly add new views - including (view)model, if applicable. See `New-View.ps1` for tips and parameters.
 
 ## C# Hot Reload - Automatic & Manual
 Enjoy the fastest and most stable C# Hot Reload, with automatic UI updates, by debugging the **Unpackaged** Windows target. This is a good reason to keep the Windows target even if you don't deploy it.

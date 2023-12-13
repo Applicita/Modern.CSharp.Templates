@@ -12,9 +12,11 @@ public abstract partial class BasePage : UIControls.Page // We need to derive fr
     protected BasePage() => NavigationCacheMode = NavigationCacheMode.Required;
 
     new public Page Content(UI.Xaml.UIElement content)
+//-:cnd:noEmit
 #if DEBUG
         => this.Content(overlayDevTools: true, content: content);
 #else
         => this.Content(overlayDevTools: false, content: content);
 #endif
+//+:cnd:noEmit
 }

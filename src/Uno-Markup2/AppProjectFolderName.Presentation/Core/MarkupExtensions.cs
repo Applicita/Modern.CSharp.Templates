@@ -7,9 +7,9 @@ static class MarkupExtensions
 
 static class MarkupHelpers
 {
-    internal static UIControls.BitmapIcon Icon(string appAsset) => BitmapIcon(UriSource: new Uri($"ms-appx:///UnoAppCTest/Assets/{appAsset}.png"));
+    internal static UIControls.BitmapIcon Icon(string appAsset) => BitmapIcon(UriSource: new Uri($"ms-appx:///AppProjectFolderName/Assets/{appAsset}.png"));
 
-    internal static Image Image(string appAsset) => CSharpMarkup.WinUI.Helpers.Image(Source: BitmapImage(new Uri($"ms-appx:///UnoAppCTest/Assets/{appAsset}.png")));
+    internal static Image Image(string appAsset) => CSharpMarkup.WinUI.Helpers.Image(Source: BitmapImage(new Uri($"ms-appx:///AppProjectFolderName/Assets/{appAsset}.png")));
 
     // Add any application-specific Markup helpers here
 }

@@ -81,6 +81,7 @@
       "description": "Select the design pattern for your application",
       "type": "parameter",
       "datatype": "choice",
+      "replaces": "$architecture$",
       "choices": [
         {
           "choice": "none",
@@ -107,57 +108,57 @@
   ],
 
   "sources": [
-    // *** HERE: test whether need to include other AppProjectFolderName.Presentation source files here that are not in architecture-* subfolder
     {
-      "condition": "(architecture == 'none')",
-      "source": "./AppProjectFolderName.Presentation/Example.None",
-      "target": "./AppProjectFolderName.Presentation/Example/",
-      "exclude": [
-        "./AppProjectFolderName.Presentation/Example.Mvux/**",
-        "./AppProjectFolderName.Presentation/Example.Mvvm/**"
-      ]
-    },
-    {
-      "condition": "(architecture == 'mvux')",
-      "source": "./AppProjectFolderName.Presentation/Example.Mvux",
-      "target": "./AppProjectFolderName.Presentation/Example/",
-      "exclude": [
-        "./AppProjectFolderName.Presentation/Example.None/**",
-        "./AppProjectFolderName.Presentation/Example.Mvvm/**"
-      ]
-    },
-    {
-      "condition": "(architecture == 'mvvm')",
-      "source": "./AppProjectFolderName.Presentation/Example.Mvvm",
-      "target": "./AppProjectFolderName.Presentation/Example/",
-      "exclude": [
-        "./AppProjectFolderName.Presentation/Example.None/**",
-        "./AppProjectFolderName.Presentation/Example.Mvux/**"
+      "modifiers": [
+        {
+          "condition": "architecture == 'none'",
+          "rename": { "AppProjectFolderName.Presentation/Example.None/": "AppProjectFolderName.Presentation/Example/" }
+        },
+        {
+          "condition": "architecture != 'none'",
+          "exclude": "AppProjectFolderName.Presentation/Example.None/**"
+        },
+        {
+          "condition": "architecture == 'mvux'",
+          "rename": { "AppProjectFolderName.Presentation/Example.Mvux/": "AppProjectFolderName.Presentation/Example/" }
+        },
+        {
+          "condition": "architecture != 'mvux'",
+          "exclude": "AppProjectFolderName.Presentation/Example.Mvux/**"
+        },
+        {
+          "condition": "architecture == 'mvvm'",
+          "rename": { "AppProjectFolderName.Presentation/Example.Mvvm/": "AppProjectFolderName.Presentation/Example/" }
+        },
+        {
+          "condition": "architecture != 'mvvm'",
+          "exclude": "AppProjectFolderName.Presentation/Example.Mvvm/**"
+        }
       ]
     }
-  ]//,
+  ],
 
-  //"postActions": [
-  //  {
-  //    "description": "Add the Presentation project to the solution",
-  //    "manualInstructions": [ { "text": "Add the generated Presentation project to solution manually" } ],
-  //    "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
-  //    "args": {
-  //      "solutionFolder": "Source"
-  //    },
-  //    "continueOnError": true
-  //  },
-  //  {
-  //    "description": "Add NuGet package references to the Presentation project, and add a Presentation project reference to the Uno application project",
-  //    "manualInstructions": [ { "text": "Manually execute the commands in AddPackageAndProjectReferences.ps1" } ],
-  //    "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
-  //    "args": {
-  //      "executable": "powershell",
-  //      "args": "-file AddPackageAndProjectReferences.ps1",
-  //      "redirectStandardError": false,
-  //      "redirectStandardOutput": false
-  //    },
-  //    "continueOnError": false
-  //  }
-  //]
+  "postActions": [
+    {
+      "description": "Add the Presentation project to the solution",
+      "manualInstructions": [ { "text": "Add the generated Presentation project to solution manually" } ],
+      "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
+      "args": {
+        "solutionFolder": "Source"
+      },
+      "continueOnError": true
+    },
+    {
+      "description": "Add NuGet package references to the Presentation project, and add a Presentation project reference to the Uno application project",
+      "manualInstructions": [ { "text": "Manually execute the commands in AddPackageAndProjectReferences.ps1" } ],
+      "actionId": "3A7C4B45-1F5D-4A30-959A-51B88E82B5D2",
+      "args": {
+        "executable": "powershell",
+        "args": "-file AddPackageAndProjectReferences.ps1",
+        "redirectStandardError": false,
+        "redirectStandardOutput": false
+      },
+      "continueOnError": false
+    }
+  ]
 }
