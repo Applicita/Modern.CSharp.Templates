@@ -1,8 +1,16 @@
-﻿// Include markup extension methods:
+﻿#if(presentation == 'mvvm')
+// MVVM presentation pattern:
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+#endif
+
+// Include markup extension methods:
 global using CSharpMarkup.WinUI;
 global using CSharpMarkup.WinUI.Uno.Extensions.Navigation;
 global using CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit;
+#if(presentation == 'mvux')
 global using CSharpMarkup.WinUI.Uno.Extensions.Reactive;
+#endif
 global using CSharpMarkup.WinUI.Uno.Toolkit;
 global using $namespacePrefix$.Presentation.Core;
 
@@ -10,7 +18,9 @@ global using $namespacePrefix$.Presentation.Core;
 global using static CSharpMarkup.WinUI.Helpers;
 global using static CSharpMarkup.WinUI.Uno.Extensions.Navigation.Helpers;
 global using static CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit.Helpers;
+#if(presentation == 'mvux')
 global using static CSharpMarkup.WinUI.Uno.Extensions.Reactive.Helpers;
+#endif
 global using static CSharpMarkup.WinUI.Uno.Toolkit.Helpers;
 global using static $namespacePrefix$.Presentation.Core.MarkupHelpers;
 

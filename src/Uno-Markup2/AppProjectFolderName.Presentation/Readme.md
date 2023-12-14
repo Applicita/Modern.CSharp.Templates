@@ -6,11 +6,10 @@ This C# Markup 2 Presentation project was created with the `dotnet new mcs-uno-m
 
 To start working with the C# Markup 2 project, follow these steps:
 
-1. Copy all `<TargetFrameworks ... />` elements from `AppProjectFolderName.csproj` to `AppProjectFolderName.Presentation.csproj` project file; they should have the same target frameworks
-   (by default the C# Markup 2 project targets all platforms supported by Uno).
+1. In `AppProjectFolderName.Presentation.csproj`, replace the `<TargetFrameworks ... />` elements with the `<TargetFrameworks ... />` elements from `AppProjectFolderName.csproj`; both projects should have the same target frameworks
+   (the generated C# Markup 2 project targets all platforms supported by Uno).
 
 2. To quickly try out the C# Markup 2 `Example`, add it to your navigation.
-   
    If you are using `Uno.Extensions.Navigation`, you can do this in `App.cs`:
    
    At the top, add:
@@ -20,7 +19,11 @@ To start working with the C# Markup 2 project, follow these steps:
 
    In the `.UseNavigation` call, pass in `CsMarkup2Example.Routes.Register` for the `viewRouteBuilder`:
    ```csharp
-   .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, CsMarkup2Example.Routes.Register)
+   .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, CsMarkup2Example.Routes.Register) // Mvux
+   ```
+   or
+   ```csharp
+   .UseNavigation(CsMarkup2Example.Routes.Register) // Mvvm
    ```
 
    And finally specify `CsMarkup2Example.Shell` in the `builder.NavigateAsync` call:
@@ -28,7 +31,8 @@ To start working with the C# Markup 2 project, follow these steps:
    Host = await builder.NavigateAsync<CsMarkup2Example.Shell>();
    ```
 
-**Note** that for the `Windows` project it may be necessary to rebuild it once, to ensure that the Windows codegen for new pages is triggered (without that codegen you will get a memory access exception on page display).
+3. **Rebuild** the `AppProjectFolderName.Windows` project and run it
+   (the rebuild is to ensure that the Windows codegen for new pages has run; without that codegen you will get an exception on page display).
 
 ## Add views and (view)models
 You can use `New-View.ps1` (located in the `AppProjectFolderName.Presentation` project folder) to quickly add new views - including (view)model, if applicable. See `New-View.ps1` for tips and parameters.

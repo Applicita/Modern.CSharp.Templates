@@ -76,12 +76,13 @@
         }
       ]
     },
-    "architecture": {
+    "presentation": {
       "displayName": "Presentation",
       "description": "Select the design pattern for your application",
       "type": "parameter",
       "datatype": "choice",
       "replaces": "$architecture$",
+      "isRequired": true,
       "choices": [
         {
           "choice": "none",
@@ -98,8 +99,7 @@
           "description": "Use the Model-View-Update eXtended (MVUX) design pattern",
           "displayName": "MVUX"
         }
-      ],
-      "defaultValue": "mvux"
+      ]
     }
   },
 
@@ -111,27 +111,27 @@
     {
       "modifiers": [
         {
-          "condition": "architecture == 'none'",
+          "condition": "presentation == 'none'",
           "rename": { "AppProjectFolderName.Presentation/Example.None/": "AppProjectFolderName.Presentation/Example/" }
         },
         {
-          "condition": "architecture != 'none'",
+          "condition": "presentation != 'none'",
           "exclude": "AppProjectFolderName.Presentation/Example.None/**"
         },
         {
-          "condition": "architecture == 'mvux'",
+          "condition": "presentation == 'mvux'",
           "rename": { "AppProjectFolderName.Presentation/Example.Mvux/": "AppProjectFolderName.Presentation/Example/" }
         },
         {
-          "condition": "architecture != 'mvux'",
+          "condition": "presentation != 'mvux'",
           "exclude": "AppProjectFolderName.Presentation/Example.Mvux/**"
         },
         {
-          "condition": "architecture == 'mvvm'",
+          "condition": "presentation == 'mvvm'",
           "rename": { "AppProjectFolderName.Presentation/Example.Mvvm/": "AppProjectFolderName.Presentation/Example/" }
         },
         {
-          "condition": "architecture != 'mvvm'",
+          "condition": "presentation != 'mvvm'",
           "exclude": "AppProjectFolderName.Presentation/Example.Mvvm/**"
         }
       ]

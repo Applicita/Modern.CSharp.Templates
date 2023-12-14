@@ -6,9 +6,15 @@ $packageNames = @(
     "CSharpMarkup.WinUI",
     "CSharpMarkup.WinUI.Uno.Extensions.Navigation",
     "CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit",
+#if(presentation == 'mvux')
     "CSharpMarkup.WinUI.Uno.Extensions.Reactive",
-    "CSharpMarkup.WinUI.Uno.Toolkit",
-    "Uno.Extensions.Reactive.WinUI"
+    "Uno.Extensions.Reactive.WinUI",
+#endif
+#if(presentation == 'mvvm')
+    "CommunityToolkit.Mvvm",
+    "PropertyChanged.Fody",
+#endif
+    "CSharpMarkup.WinUI.Uno.Toolkit"
 )
 
 $packageNames | Foreach-Object {
