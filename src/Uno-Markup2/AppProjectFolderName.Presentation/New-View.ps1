@@ -1,5 +1,5 @@
 # Tip: to use in Visual Studio: 
-# 1) In solution explorer, right-click the `AppProjectFolderName.Presentation` project and select `Open in Terminal`
+# 1) In solution explorer, right-click the AppProjectFolderName.Presentation project and select "Open in Terminal"
 # 2) In the terminal window, type "new" + TAB to expand to ".\New-View.ps1", followed by the view name
 
 Param(

@@ -1,6 +1,6 @@
 ﻿# Welcome to C# Markup 2 for Uno Platform
 
-This C# Markup 2 Presentation project was created with the `dotnet new mcs-uno-markup2` template from [`Modern.CSharp.Templates 1.4.2`](https://www.nuget.org/packages/Modern.CSharp.Templates/1.4.2)
+This C# Markup 2 Presentation project was created with `dotnet new mcs-uno-markup2 --presentation none` (template version [`Modern.CSharp.Templates 1.4.2`](https://www.nuget.org/packages/Modern.CSharp.Templates/1.4.2))
 
 ## Get Started
 
@@ -19,20 +19,18 @@ To start working with the C# Markup 2 project, follow these steps:
 
    In the `.UseNavigation` call, pass in `CsMarkup2Example.Routes.Register` for the `viewRouteBuilder`:
    ```csharp
-   .UseNavigation(ReactiveViewModelMappings.ViewModelMappings, CsMarkup2Example.Routes.Register) // Mvux
-   ```
-   or
-   ```csharp
-   .UseNavigation(CsMarkup2Example.Routes.Register) // Mvvm
+   .UseNavigation(CsMarkup2Example.Routes.Register)
    ```
 
-   And finally specify `CsMarkup2Example.Shell` in the `builder.NavigateAsync` call:
+   Finally specify `CsMarkup2Example.Shell` in the `builder.NavigateAsync` call, and provide an `initialNavigate` function:
    ```csharp
-   Host = await builder.NavigateAsync<CsMarkup2Example.Shell>();
+   Host = await builder.NavigateAsync<CsMarkup2Example.Shell>(async (_, navigator) => await navigator.NavigateViewAsync<CsMarkup2Example.MainPage>(this));
    ```
 
 3. **Rebuild** the `AppProjectFolderName.Windows` project and run it
    (the rebuild is to ensure that the Windows codegen for new pages has run; without that codegen you will get an exception on page display).
+
+   Note that as of this writing the `UnoApp` template for `--presentation none` does not compile; if you get compile errors from Uno template code, you can remove the `RegisterRoutes` method and the `Presentation` folder from the `AppProjectFolderName` project.
 
 ## Add views and (view)models
 You can use `New-View.ps1` (located in the `AppProjectFolderName.Presentation` project folder) to quickly add new views - including (view)model, if applicable. See `New-View.ps1` for tips and parameters.

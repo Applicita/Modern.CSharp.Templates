@@ -19,6 +19,9 @@ public partial class MainViewModel : ObservableObject
 
     public string? Name { get; set; }
 
+    // Example of a calculated property - these are automatically updated by PropertyChanged.Fody
+    public string ButtonText => "Go to Second Page " + (string.IsNullOrWhiteSpace(Name) ? "anonymously" : $"as {Name}");
+
     [RelayCommand]
     async Task GoToSecond()
     {

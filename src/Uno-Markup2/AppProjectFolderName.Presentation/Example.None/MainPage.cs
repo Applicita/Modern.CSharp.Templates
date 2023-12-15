@@ -6,17 +6,17 @@ partial class MainPage
         Grid (
             Rows(Auto, Star),
 
-            NavigationBar() .Content().Bind(vm?.Title),
+            NavigationBar()
+               .Assign(out navigationBar),
  
             StackPanel (
                 TextBox(PlaceholderText: "Enter your name:")
-                   .Bind(vm?.Name, mode: BindingMode.TwoWay, updateSourceTrigger: UI.Xaml.Data.UpdateSourceTrigger.PropertyChanged),
+                   .Assign(out nameTextBox),
 
-                Button()
-                   .Content().Bind(vm?.ButtonText)
+                Button("Go to Second Page")
                    .AutomationProperties_AutomationId("SecondPageButton")
-                   .BindCommand(vm?.GoToSecondCommand)
-            )  .Grid_Row(1) .Center() .Spacing(16)
+                   .Assign(out gotoSecondButton)
+            ).Grid_Row(1) .Center() .Spacing(16)
         )  .SafeArea_Insets().All()
     )  .Background(ThemeResource.ApplicationPageBackgroundThemeBrush);
 }

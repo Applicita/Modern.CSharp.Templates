@@ -112,27 +112,36 @@
       "modifiers": [
         {
           "condition": "presentation == 'none'",
-          "rename": { "AppProjectFolderName.Presentation/Example.None/": "AppProjectFolderName.Presentation/Example/" }
+          "rename": {
+            "AppProjectFolderName.Presentation/Example.None/": "AppProjectFolderName.Presentation/Example/",
+            "AppProjectFolderName.Presentation/Readme.None.md": "AppProjectFolderName.Presentation/Readme.md"
+          }
         },
         {
           "condition": "presentation != 'none'",
-          "exclude": "AppProjectFolderName.Presentation/Example.None/**"
+          "exclude": [ "AppProjectFolderName.Presentation/Example.None/**", "AppProjectFolderName.Presentation/Readme.None.md" ]
         },
         {
           "condition": "presentation == 'mvux'",
-          "rename": { "AppProjectFolderName.Presentation/Example.Mvux/": "AppProjectFolderName.Presentation/Example/" }
+          "rename": {
+            "AppProjectFolderName.Presentation/Example.Mvux/": "AppProjectFolderName.Presentation/Example/",
+            "AppProjectFolderName.Presentation/Readme.Mvux.md": "AppProjectFolderName.Presentation/Readme.md"
+          }
         },
         {
           "condition": "presentation != 'mvux'",
-          "exclude": "AppProjectFolderName.Presentation/Example.Mvux/**"
+          "exclude": [ "AppProjectFolderName.Presentation/Example.Mvux/**", "AppProjectFolderName.Presentation/Readme.Mvux.md" ]
         },
         {
           "condition": "presentation == 'mvvm'",
-          "rename": { "AppProjectFolderName.Presentation/Example.Mvvm/": "AppProjectFolderName.Presentation/Example/" }
+          "rename": {
+            "AppProjectFolderName.Presentation/Example.Mvvm/": "AppProjectFolderName.Presentation/Example/",
+            "AppProjectFolderName.Presentation/Readme.Mvvm.md": "AppProjectFolderName.Presentation/Readme.md"
+          }
         },
         {
           "condition": "presentation != 'mvvm'",
-          "exclude": "AppProjectFolderName.Presentation/Example.Mvvm/**"
+          "exclude": [ "AppProjectFolderName.Presentation/Example.Mvvm/**", "AppProjectFolderName.Presentation/Readme.Mvvm.md" ]
         }
       ]
     }
