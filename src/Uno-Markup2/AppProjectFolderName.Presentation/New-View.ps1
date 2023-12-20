@@ -11,4 +11,8 @@ Param(
     [ValidateSet("none", "mvvm", "mvux")]
     [string]$Presentation = "$architecture$"
 )
+#if(tfm == 'net7.0')
+dotnet new mcs-uno-view -n $Name --namespace $namespacePrefix$.Presentation --presentation $Presentation --csharpversion 11
+#else
 dotnet new mcs-uno-view -n $Name --namespace $namespacePrefix$.Presentation --presentation $Presentation
+#endif

@@ -27,15 +27,14 @@
     "Linux",
     "WebAssembly",
     "Windows App SDK",
-    "WinUI",
-    "dotnet-new"
+    "WinUI"
   ],
+  "name": "C# Markup 2 View for Uno Platform",
   "identity": "Modern.CSharp.Uno.Markup2.View",
-  "name": "View (WinUI 3 with C# Markup 2)",
   "shortName": "mcs-uno-view",
+  "description": "C# Markup 2 View + Model item template for use with mcs-uno-markup2 template",
   "sourceName": "ViewName",
   "defaultName": "New",
-  "description": "C# Markup 2 View + Model item template for use with mcs-uno-markup2 template",
   "tags": {
     "language": "C#",
     "type": "item"
@@ -44,7 +43,7 @@
     "namespace": {
       "type": "parameter",
       "datatype": "string",
-      "replaces": "ViewsNamespace",
+      "replaces": "$namespace$",
       "description": "The full namespace for the view",
       "isRequired": true
     },
@@ -52,10 +51,11 @@
       "description": "Select the model type for the view",
       "type": "parameter",
       "datatype": "choice",
+      "isRequired": true,
       "choices": [
         {
           "choice": "none",
-          "description": "No model",
+          "description": "No model, use code-behind in <name>Page.logic.cs",
           "displayName": "None"
         },
         {
@@ -69,34 +69,55 @@
           "displayName": "MVUX"
         }
       ]
+    },
+    "csharpversion": {
+      "displayName": "C# version",
+      "type": "parameter",
+      "datatype": "choice",
+      "enableQuotelessLiterals": true,
+      "defaultValue": "12",
+      "description": "Select which C# version (which language features) to use",
+      "choices": [
+        {
+          "choice": "11",
+          "displayName": "C# 11",
+          "description": "C# 11 (the default for .NET 7)"
+        },
+        {
+          "choice": "12",
+          "displayName": "C# 12",
+          "description": "C# 12 (the default for .NET 8)"
+        }
+      ]
     }
   },
   "sources": [
     {
-      "condition": "(presentation == 'none')",
-      "source": "./Presentation-none",
-      "target": "./",
-      "exclude": [
-        "./Presentation-mvux/**",
-        "./Presentation-mvvm/**"
-      ]
-    },
-    {
-      "condition": "(presentation == 'mvux')",
-      "source": "./Presentation-mvux",
-      "target": "./",
-      "exclude": [
-        "./Presentation-none/**",
-        "./Presentation-mvvm/**"
-      ]
-    },
-    {
-      "condition": "(presentation == 'mvvm')",
-      "source": "./Presentation-mvvm",
-      "target": "./",
-      "exclude": [
-        "./Presentation-none/**",
-        "./Presentation-mvux/**"
+      "modifiers": [
+        {
+          "condition": "presentation == 'none'",
+          "rename": { "None/": "/" }
+        },
+        {
+          "condition": "presentation != 'none'",
+          "exclude": "None/**"
+        },
+        {
+          "condition": "presentation == 'mvux'",
+          "rename": { "Mvux/": "/" }
+        },
+        {
+          "condition": "presentation != 'mvux'",
+          "exclude": "Mvux/**"
+        },
+        {
+          "condition": "presentation == 'mvvm'",
+          "rename": { "Mvvm/": "/" }
+        },
+        {
+          "condition": "presentation != 'mvvm'",
+          "exclude": "Mvvm/**"
+        }
       ]
     }
   ]

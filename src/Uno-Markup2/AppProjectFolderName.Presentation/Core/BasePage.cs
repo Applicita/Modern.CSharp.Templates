@@ -1,22 +1,16 @@
-﻿using Microsoft.UI.Xaml.Navigation;
+﻿namespace $namespacePrefix$.Presentation.Core;
 
-namespace $namespacePrefix$.Presentation.Core;
-
-public abstract partial class BasePage<TViewModel> : BasePage where TViewModel : class
+partial class BasePage
 {
-    protected TViewModel? vm => DataContext as TViewModel;
-}
+    UIElement WrapUI(UIElement content) =>
+        MonochromaticOverlayPresenter(
+            content.UI,
 
-public abstract partial class BasePage : UIControls.Page // We need to derive from the UI page instead of from the C# Markup 2 page, because instances of this class are created with new (by e.g. navigation), not with a C# Markup 2 helper.
-{
-    protected BasePage() => NavigationCacheMode = NavigationCacheMode.Required;
+            TextBlock(Span("Built with C# Markup "), Span("2").FontSize(18), Span(" for Uno"))
+               .FontStyle().Italic()
+               .Bottom() .HCenter()
+        )  .SafeArea_Insets().All();
 
-    new public Page Content(UI.Xaml.UIElement content)
-//-:cnd:noEmit
-#if DEBUG
-        => this.Content(overlayDevTools: true, content: content);
-#else
-        => this.Content(overlayDevTools: false, content: content);
-#endif
-//+:cnd:noEmit
+    Page WrapUI(Page page) => page
+        .Background(ThemeResource.ApplicationPageBackgroundThemeBrush);
 }

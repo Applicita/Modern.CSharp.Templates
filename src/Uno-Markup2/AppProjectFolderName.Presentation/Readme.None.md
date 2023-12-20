@@ -30,7 +30,7 @@ To start working with the C# Markup 2 project, follow these steps:
 3. **Rebuild** the `AppProjectFolderName.Windows` project and run it
    (the rebuild is to ensure that the Windows codegen for new pages has run; without that codegen you will get an exception on page display).
 
-   Note that as of this writing the `UnoApp` template for `--presentation none` does not compile; if you get compile errors from Uno template code, you can remove the `RegisterRoutes` method and the `Presentation` folder from the `AppProjectFolderName` project.
+   Note that as of this writing the `UnoApp` template for `--presentation none` does not compile; if you get compile errors from Uno template code, you can remove the `App.RegisterRoutes` method and the `Presentation` folder from the `AppProjectFolderName` project.
 
 ## Add views and (view)models
 You can use `New-View.ps1` (located in the `AppProjectFolderName.Presentation` project folder) to quickly add new views - including (view)model, if applicable. See `New-View.ps1` for tips and parameters.

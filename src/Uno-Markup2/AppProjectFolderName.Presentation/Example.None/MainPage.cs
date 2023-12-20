@@ -17,6 +17,6 @@ partial class MainPage
                    .AutomationProperties_AutomationId("SecondPageButton")
                    .Assign(out gotoSecondButton)
             ).Grid_Row(1) .Center() .Spacing(16)
-        )  .SafeArea_Insets().All()
-    )  .Background(ThemeResource.ApplicationPageBackgroundThemeBrush);
+        )
+    );
 }

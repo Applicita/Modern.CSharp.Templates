@@ -12,6 +12,6 @@ partial class SecondPage
             TextBlock()
                .Bind(vm?.Entity.Name)
                .Center()
-        )  .SafeArea_Insets().All()
-    )  .Background(ThemeResource.ApplicationPageBackgroundThemeBrush);
+        )
+    );
 }
