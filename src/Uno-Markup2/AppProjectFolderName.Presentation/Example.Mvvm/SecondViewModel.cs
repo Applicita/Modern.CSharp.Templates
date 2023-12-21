@@ -1,4 +1,4 @@
-﻿namespace $namespacePrefix$.Presentation.CsMarkup2Example;
+﻿namespace $namespacePrefix$.Presentation.Example;
 
 #if(tfm == 'net7.0')
 public partial class SecondViewModel
@@ -8,7 +8,10 @@ public partial class SecondViewModel
     public SecondViewModel(Entity entity) => Entity = entity;
 }
 #else
-public partial class SecondViewModel(Entity Entity);
+public partial class SecondViewModel(Entity entity)
+{
+    public Entity Entity => entity;
+}
 #endif
 
 public record Entity(string Name);

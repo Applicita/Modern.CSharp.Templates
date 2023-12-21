@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
 
-namespace $namespacePrefix$.Presentation.CsMarkup2Example;
+namespace $namespacePrefix$.Presentation.Example;
 
 [UIBindable]
 public sealed partial class MainPage : BasePage, IBuildUI

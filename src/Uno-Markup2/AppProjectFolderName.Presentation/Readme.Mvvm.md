@@ -14,7 +14,7 @@ To start working with the C# Markup 2 project, follow these steps:
    
    At the top, add:
    ```csharp
-   using CsMarkup2Example = $namespacePrefix$.Presentation.CsMarkup2Example;
+   using CsMarkup2Example = $namespacePrefix$.Presentation.Example;
    ```
 
    In the `.UseNavigation` call, pass in `CsMarkup2Example.Routes.Register` for the `viewRouteBuilder`:

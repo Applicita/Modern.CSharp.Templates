@@ -1,4 +1,4 @@
-﻿namespace $namespacePrefix$.Presentation.CsMarkup2Example;
+﻿namespace $namespacePrefix$.Presentation.Example;
 
 public partial class ShellModel
 {
