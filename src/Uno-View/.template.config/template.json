@@ -96,7 +96,7 @@
       "modifiers": [
         {
           "condition": "presentation == 'none'",
-          "rename": { "None/": "/" }
+          "rename": { "None/": "./" }
         },
         {
           "condition": "presentation != 'none'",
@@ -104,7 +104,7 @@
         },
         {
           "condition": "presentation == 'mvux'",
-          "rename": { "Mvux/": "/" }
+          "rename": { "Mvux/": "./" }
         },
         {
           "condition": "presentation != 'mvux'",
@@ -112,7 +112,7 @@
         },
         {
           "condition": "presentation == 'mvvm'",
-          "rename": { "Mvvm/": "/" }
+          "rename": { "Mvvm/": "./" }
         },
         {
           "condition": "presentation != 'mvvm'",
