@@ -1,6 +1,6 @@
 ﻿# Welcome to C# Markup 2 for Uno Platform
 
-This C# Markup 2 Presentation project was created with `dotnet new mcs-uno-markup2 --presentation none` (template version [`Modern.CSharp.Templates 1.4.2`](https://www.nuget.org/packages/Modern.CSharp.Templates/1.4.2))
+This C# Markup 2 Presentation project was created with `dotnet new mcs-uno-markup2 --presentation none` (template version [`Modern.CSharp.Templates 1.5.0`](https://www.nuget.org/packages/Modern.CSharp.Templates/1.5.0))
 
 ## Get Started
 
