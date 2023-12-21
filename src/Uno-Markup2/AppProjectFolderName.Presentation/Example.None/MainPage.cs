@@ -4,7 +4,7 @@ partial class MainPage
 {
     public void BuildUI() => Content (
         Grid (
-            Rows(Auto, Star),
+            Rows(Auto, Star, Auto),
 
             NavigationBar()
                .Assign(out navigationBar),
@@ -16,7 +16,9 @@ partial class MainPage
                 Button("Go to Second Page")
                    .AutomationProperties_AutomationId("SecondPageButton")
                    .Assign(out gotoSecondButton)
-            ).Grid_Row(1) .Center() .Spacing(16)
+            )  .Grid_Row(1) .Center() .Spacing(16),
+
+            ExampleFooter() .Grid_Row(2)
         )
     );
 }

@@ -6,7 +6,7 @@ partial class ViewNamePage
 
     public void BuildUI() => Content (
         Grid (
-            Rows(
+            Rows (
                 (Row.Header, Auto),
                 (Row.Body  , Star)
             ),

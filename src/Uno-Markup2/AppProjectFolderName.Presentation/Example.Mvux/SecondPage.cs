@@ -11,7 +11,9 @@ partial class SecondPage
 
             TextBlock()
                .Bind(vm?.Entity.Name)
-               .Center()
+               .Center(),
+
+            ExampleFooter()
         )
     );
 }

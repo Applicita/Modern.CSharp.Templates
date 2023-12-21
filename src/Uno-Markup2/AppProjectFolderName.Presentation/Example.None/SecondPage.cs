@@ -11,7 +11,9 @@ partial class SecondPage
 
             TextBlock()
                .Assign(out nameTextBlock)
-               .Center()
+               .Center(),
+
+            ExampleFooter()
         )
     );
 }

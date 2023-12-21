@@ -10,6 +10,6 @@ public sealed partial class ViewNamePage : BasePage, IBuildUI
     public ViewNamePage()
     {
         BuildUI();
-        messageTextBlock!.Text = "NJoy concise C# Markup 2 for Uno Platform";
+        messageTextBlock!.Text = "Hello from C# Markup 2 - the concise, next-gen C# Markup for Uno!";
     }
 }

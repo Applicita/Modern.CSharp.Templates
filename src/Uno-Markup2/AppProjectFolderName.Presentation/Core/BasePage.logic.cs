@@ -7,20 +7,18 @@ public abstract partial class BasePage<TViewModel> : BasePage where TViewModel :
     protected TViewModel? vm => DataContext as TViewModel;
 }
 
-public abstract partial class BasePage : UIControls.Page // We need to derive from the UI page instead of from the C# Markup 2 page, because instances of this class are created with new (by e.g. navigation), not with a C# Markup 2 helper.
+// Because instances of this class are created with new instead of with a C# Markup 2 helper,
+// derive this class from the UI type instead of from the C# Markup 2 type
+public abstract partial class BasePage : UIControls.Page
 {
-    protected BasePage() => NavigationCacheMode = NavigationCacheMode.Required;
+//-:cnd:noEmit
+    const bool ShowTools =
+#if DEBUG
+        true;
+#else
+        false;
+#endif
+//+:cnd:noEmit
 
-    new protected Page Content(UIElement content)
-        => WrapUI(this.Content(
-                overlayDevTools:
-//-:cnd:noEmit
-                #if DEBUG
-                    true,
-                #else
-                    false,
-                #endif
-//-:cnd:noEmit
-                WrapUI(content).UI
-            ));
+    protected BasePage() => NavigationCacheMode = NavigationCacheMode.Required;
 }
