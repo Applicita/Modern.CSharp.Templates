@@ -11,8 +11,19 @@ Param(
     [ValidateSet("none", "mvvm", "mvux")]
     [string]$Presentation = "$architecture$"
 )
+
+$SubNamespace = ""
+$OutputParameter = ""
+$lastDotPos = $Name.LastIndexOf('.')
+if ($lastDotPos -ge 0)
+{
+    $OutputParameter = "-o " + $Name.Substring(0, $lastDotPos).Replace('.', '\')
+    $SubNamespace = "." + $Name.Substring(0, $lastDotPos)
+    $Name = $Name.Substring($lastDotPos + 1)
+}
+
 #if(tfm == 'net7.0')
-dotnet new mcs-uno-view -n $Name --namespace $namespacePrefix$.Presentation --presentation $Presentation --csharpversion 11
+Invoke-Expression "dotnet new mcs-uno-view $OutputParameter -n $Name --namespace TestMvvm.Presentation$SubNamespace --presentation $Presentation --csharpversion 11"
 #else
-dotnet new mcs-uno-view -n $Name --namespace $namespacePrefix$.Presentation --presentation $Presentation
+Invoke-Expression "dotnet new mcs-uno-view $OutputParameter -n $Name --namespace TestMvvm.Presentation$SubNamespace --presentation $Presentation"
 #endif
