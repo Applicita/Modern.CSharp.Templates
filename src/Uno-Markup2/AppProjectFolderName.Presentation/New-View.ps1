@@ -3,7 +3,7 @@
 # 2) In the terminal window, type "new" + TAB to expand to ".\New-View.ps1", followed by the view name
 
 Param(
-    [Parameter(Mandatory, HelpMessage="The view name ('Page' suffix will be added)")]
+    [Parameter(Mandatory, HelpMessage="The view name ('Page' suffix will be added, use dots to add subnamespaces and subfolders)")]
     [string]
     $Name,
 
