@@ -3,9 +3,9 @@ A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotn
 
 Templates:
 - **mcs-editorconfig** [doc](https://github.com/Applicita/Modern.CSharp.Templates/blob/main/Editorconfig.md)<br />
-  *Settings for C# 11 code formatting, style, naming style and analysis.
+  *Settings for C# 12 code formatting, style, naming style and analysis.
 Promotes conciseness, readability and leveraging the latest language features.
-(can also be used with C# 10)*
+(can also be used with C# 10 & 11)*
 
 - **mcs-uno-markup2** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)<br />
   *Project that adds concise C# Markup 2 to a Uno Platform 5 Solution (.NET 8/7)*

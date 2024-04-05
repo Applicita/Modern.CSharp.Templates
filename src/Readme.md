@@ -25,4 +25,4 @@ Promotes conciseness, readability and leveraging the latest language features.
 
 The Orleans templates can be combined with [Orleans.Multitenant](https://github.com/Applicita/Orleans.Multitenant) for secure, flexible tenant separation in Microsoft Orleans 7
 
-[Release Notes](https://github.com/Applicita/Modern.CSharp.Templates/releases/tag/1-5-0)
+[Release Notes](https://github.com/Applicita/Modern.CSharp.Templates/releases/tag/2-0-0)
