@@ -1,19 +1,19 @@
-{
+﻿{
   "$schema": "http://json.schemastore.org/template",
-  "author": "VincentH.NET @ Applicita",
+  "author": "VincentH.NET @ InnoWvate.NET",
   "classifications": [
     "modern",
     "csharp",
     "C#",
-    "csharp 11",
-    "C# 11",
+    "csharp 12",
+    "C# 12",
     "editorconfig"
   ],
   "identity": "Modern.CSharp.editorconfig",
-  "name": "Modern C# 11 .editorconfig",
+  "name": "Modern C# 12 .editorconfig",
   "shortName": "mcs-editorconfig",
   "defaultName": ".editorconfig",
-  "description": "Settings for C# 11 code formatting, style, naming style and analysis. Promotes conciseness, readability and leveraging the latest language features.",
+  "description": "Settings for C# 12 code formatting, style, naming style and analysis. Promotes conciseness, readability and leveraging the latest language features.",
   "tags": {
     "language": "C#",
     "type": "item"

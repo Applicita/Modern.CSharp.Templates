@@ -17,7 +17,7 @@ Promotes conciseness, readability and leveraging the latest language features.
 
 - **mcs-orleans-results** [doc](https://github.com/Applicita/Orleans.Results#readme)
 
-  *Concise, version-tolerant result pattern implementation for Microsoft Orleans 7*
+  *Concise, version-tolerant result pattern implementation for Microsoft Orleans 8*
 
 - **mcs-orleans-multiservice** [doc](https://github.com/Applicita/Orleans.Multiservice#readme)
 
