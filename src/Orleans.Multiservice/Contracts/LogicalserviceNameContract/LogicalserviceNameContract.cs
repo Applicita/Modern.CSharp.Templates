@@ -6,6 +6,4 @@ public interface IItemsGrain : IGrainWithStringKey
 }
 
 [GenerateSerializer, Immutable]
-public record LogicalserviceNameItem(
-    [property: Id(0)] int Id,
-    [property: Id(1)] string Name);
+public record LogicalserviceNameItem(int Id, string Name);

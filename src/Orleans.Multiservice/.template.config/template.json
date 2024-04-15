@@ -1,14 +1,14 @@
-{
+﻿{
   "$schema": "http://json.schemastore.org/template",
-  "author": "VincentH.NET @ Applicita",
+  "author": "VincentH.NET @ InnoWvate.NET",
   "classifications": [
     "modern",
     "csharp",
     "C#",
-    "csharp 11",
-    "C# 11",
+    "csharp 12",
+    "C# 12",
     "Orleans",
-    "Orleans 7",
+    "Orleans 8",
     "multiservice",
     "logical service",
     "microservice",
@@ -16,9 +16,9 @@
     "pattern"
   ],
   "identity": "Modern.CSharp.Orleans.Multiservice",
-  "name": "Modern C# 11 multiservice pattern for Orleans 7",
+  "name": "Modern C# 12 multiservice pattern for Orleans 8",
   "shortName": "mcs-orleans-multiservice",
-  "description": "Solution for a single Microsoft Orleans 7 (micro)service containing one or more logical services",
+  "description": "Solution for a single Microsoft Orleans 8 (micro)service containing one or more logical services",
   "tags": {
     "language": "C#",
     "type": "solution"
@@ -50,6 +50,15 @@
       "replaces": "LogicalserviceName",
       "description": "The name (without 'Service' suffix) of the logical service to add to the solution.\nUsed in the name of the new service project and in new namespaces + classes in the Apis and Contracts projects",
       "isRequired": true
+    },
+    "LogicalserviceLower": {
+      "type": "generated",
+      "generator": "casing",
+      "parameters": {
+        "source": "Logicalservice",
+        "toLower": true
+      },
+      "replaces": "LogicalserviceNameLower"
     }
   },
 
@@ -66,7 +75,9 @@
             "Apis/*.*",
             "Contracts/Foundation/**/*",
             "Contracts/*.*",
+            ".editorconfig",
             "AddLogicalService.ps1",
+            "EOL.gitattributes",
             "MultiserviceName.sln",
             "Readme.md"
           ]

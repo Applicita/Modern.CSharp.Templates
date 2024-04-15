@@ -17,7 +17,7 @@ Promotes conciseness, readability and leveraging the latest language features.
   *Concise, version-tolerant result pattern implementation for Microsoft Orleans 8*
 
 - **mcs-orleans-multiservice** [doc](https://github.com/Applicita/Orleans.Multiservice#readme)<br />
-  *Prevent microservices pain with logical service separation for Microsoft Orleans 7*
+  *Prevent microservices pain with logical service separation for Microsoft Orleans 8*
 
 The Orleans templates can be combined with [Orleans.Multitenant](https://github.com/Applicita/Orleans.Multitenant) for secure, flexible tenant separation in Microsoft Orleans 7
 
