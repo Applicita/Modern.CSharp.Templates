@@ -12,7 +12,7 @@ function Update-RegisterEndpoints {
 
     if ($programFile -ne $null) {
         $programContent = Get-Content -Path $programFile.FullName -Raw
-        $pattern = "(?s)(app\s*\.RegisterEndpoints\s*\(.+?\))\s*\)"
+        $pattern = "(?s)(\.\s*RegisterEndpoints\s*\(.+?\))\s*\)"
         $modifiedContent = $programContent -replace $pattern, "`$1,$newParameter)"
 
         if ($modifiedContent -ne $programContent) {
