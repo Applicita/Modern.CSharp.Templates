@@ -1,4 +1,4 @@
-{
+﻿{
   // Aligned with https://github.com/unoplatform/uno.templates/blob/main/src/Uno.Templates/content/unoapp/.template.config/template.json
   "$schema": "http://json.schemastore.org/template",
   "author": "VincentH.NET @ InnoWvate.NET",
@@ -64,11 +64,6 @@
       "defaultValue": "net8.0",
       "description": "Select the .NET version of your solution",
       "choices": [
-        {
-          "choice": "net7.0",
-          "displayName": ".NET 7.0",
-          "description": "Target .NET 7.0 (Standard Term Support)"
-        },
         {
           "choice": "net8.0",
           "displayName": ".NET 8.0",
@@ -152,9 +147,6 @@
       "description": "Add the Presentation project to the solution",
       "manualInstructions": [ { "text": "Add the generated Presentation project to solution manually" } ],
       "actionId": "D396686C-DE0E-4DE6-906D-291CD29FC5DE",
-      "args": {
-        "solutionFolder": "Source"
-      },
       "continueOnError": true
     },
     {

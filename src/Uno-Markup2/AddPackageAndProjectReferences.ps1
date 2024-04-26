@@ -1,8 +1,9 @@
-Start-Sleep -seconds 1 # Workaround to prevent exception from lock on dotnet.exe log file when nesting dotnet.exe invocations (log filename includes current time down to seconds)
+﻿Start-Sleep -seconds 1 # Workaround to prevent exception from lock on dotnet.exe log file when nesting dotnet.exe invocations (log filename includes current time down to seconds)
 
 $appProjectPath    = "AppProjectFolderName/AppProjectFolderName.csproj"
 $markupProjectPath = "AppProjectFolderName.Presentation/AppProjectFolderName.Presentation.csproj"
-$packageNames = @(
+
+$packages = @(
     "CSharpMarkup.WinUI",
     "CSharpMarkup.WinUI.Uno.Extensions.Navigation",
     "CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit",
@@ -17,7 +18,7 @@ $packageNames = @(
     "CSharpMarkup.WinUI.Uno.Toolkit"
 )
 
-$packageNames | Foreach-Object {
+$packages | Foreach-Object {
     dotnet add $markupProjectPath package $_ | Select-String -Pattern "warn|error|PackageReference for package"
 }
 

@@ -1,4 +1,4 @@
-# Tip: to use in Visual Studio: 
+﻿# Tip: to use in Visual Studio: 
 # 1) In solution explorer, right-click the AppProjectFolderName.Presentation project and select "Open in Terminal"
 # 2) In the terminal window, type "new" + TAB to expand to ".\New-View.ps1", followed by the view name
 
@@ -22,8 +22,5 @@ if ($lastDotPos -ge 0)
     $Name = $Name.Substring($lastDotPos + 1)
 }
 
-#if(tfm == 'net7.0')
-Invoke-Expression "dotnet new mcs-uno-view $OutputParameter -n $Name --namespace TestMvvm.Presentation$SubNamespace --presentation $Presentation --csharpversion 11"
-#else
-Invoke-Expression "dotnet new mcs-uno-view $OutputParameter -n $Name --namespace TestMvvm.Presentation$SubNamespace --presentation $Presentation"
-#endif
+Invoke-Expression "dotnet new mcs-uno-view $OutputParameter -n $Name --namespace $namespacePrefix$.Presentation$SubNamespace --presentation $Presentation"
+Write-Host "Note: for Windows, you may need to rebuild the main Uno project once before using the new view, to generate it's XamlTypeInfo"

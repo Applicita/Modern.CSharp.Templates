@@ -2,10 +2,10 @@
 
     <PropertyGroup>
         <PackageId>Modern.CSharp.Templates</PackageId>
-        <PackageVersion>2.0.0</PackageVersion>
+        <PackageVersion>2.0.0</PackageVersion> <!-- NOTE update this version in .md files manually -->
         <PackageType>Template</PackageType>
         <Title>Modern C# 12/11 Templates</Title>
-        <Description>A toolkit of modern dotnet new templates for C# 12/11, .NET 8/7, Microsoft Orleans 7, Windows App SDK and Uno Platform</Description>
+        <Description>A toolkit of modern dotnet new templates for C# 12/11, .NET 8/7, Microsoft Orleans 8, Windows App SDK and Uno Platform</Description>
         <Authors>VincentH.NET;Applicita</Authors>
         <Company>Applicita</Company>
 		<Copyright>Copyright © VincentH.NET</Copyright>

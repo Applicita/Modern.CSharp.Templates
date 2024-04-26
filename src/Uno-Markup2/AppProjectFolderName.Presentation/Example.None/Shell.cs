@@ -5,7 +5,7 @@ partial class Shell
     public void BuildUI() => Content (
         Border (
             ExtendedSplashScreen()
-               .Stretch() .StretchContent()
+               .HVStretch() .StretchContent()
                .LoadingContentTemplate(DataTemplate(() =>
                     Grid(
                         Rows(Stars(2), Star),

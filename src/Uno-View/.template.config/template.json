@@ -1,4 +1,4 @@
-{
+﻿{
   "$schema": "http://json.schemastore.org/template",
   "author": "VincentH.NET @ Applicita",
   "classifications": [
@@ -78,11 +78,6 @@
       "defaultValue": "12",
       "description": "Select which C# version (which language features) to use",
       "choices": [
-        {
-          "choice": "11",
-          "displayName": "C# 11",
-          "description": "C# 11 (the default for .NET 7)"
-        },
         {
           "choice": "12",
           "displayName": "C# 12",
