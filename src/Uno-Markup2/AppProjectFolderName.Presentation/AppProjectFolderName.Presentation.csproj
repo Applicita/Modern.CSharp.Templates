@@ -12,7 +12,9 @@
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
 
-    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Disable implicit usings to avoid ambiguities between types in Uno and CSharpMarkup.WinUI.Uno -->
+    <ImplicitUsings>disable</ImplicitUsings>
+
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

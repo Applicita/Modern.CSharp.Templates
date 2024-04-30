@@ -1,10 +1,22 @@
-﻿#if(presentation == 'mvvm')
+﻿// Non-Uno global usings that would be generated if ImplicitUsings was enabled in the project file:
+global using global::System;
+global using global::System.Collections.Generic;
+global using global::System.IO;
+global using global::System.Linq;
+global using global::System.Net.Http;
+global using global::System.Threading;
+global using global::System.Threading.Tasks;
+
+#if(presentation == 'mvvm')
 // MVVM presentation pattern:
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
 #endif
 
-// Include markup extension methods:
+// Uno navigation for use in models:
+global using Uno.Extensions.Navigation;
+
+// Markup extension methods:
 global using CSharpMarkup.WinUI;
 global using CSharpMarkup.WinUI.Uno.Extensions.Navigation;
 global using CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit;
@@ -14,7 +26,7 @@ global using CSharpMarkup.WinUI.Uno.Extensions.Reactive;
 global using CSharpMarkup.WinUI.Uno.Toolkit;
 global using $namespacePrefix$.Presentation.Core;
 
-// Include markup helpers:
+// Markup helpers:
 global using static CSharpMarkup.WinUI.Helpers;
 global using static CSharpMarkup.WinUI.Uno.Extensions.Navigation.Helpers;
 global using static CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit.Helpers;

@@ -1,4 +1,5 @@
-﻿namespace $namespacePrefix$.Presentation.Example;
+﻿using Uno.Extensions.Hosting;
+namespace $namespacePrefix$.Presentation.Example;
 
 [UIBindable]
 public sealed partial class Shell : BaseUserControl<ShellViewModel>, IContentControlProvider, IBuildUI
