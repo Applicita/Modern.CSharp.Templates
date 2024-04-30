@@ -6,7 +6,7 @@ partial class SecondPage
         Grid (
             NavigationBar("Second Page")
                .MainCommand(
-                   AppBarButton() .Icon(Icon("Icons/back"))
+                   AppBarButton() .Icon(Icon("Images/back"))
                ),
 
             TextBlock()

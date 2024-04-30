@@ -4,7 +4,6 @@ public static class Routes
 {
     public static void Register(IViewRegistry views, IRouteRegistry routes)
     {
-        // Note that we use the generated Bindable model types here as a workaround for https://github.com/unoplatform/uno.extensions/issues/924#issuecomment-1822337527
         views.Register(
             new ViewMap(ViewModel: typeof(ShellViewModel)),
             new ViewMap<MainPage, MainViewModel>(),
