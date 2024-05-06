@@ -1,6 +1,6 @@
 ﻿namespace $namespacePrefix$.Presentation.Example;
 
-public class ShellViewModel
+public class ShellViewModel : BaseViewModel
 {
     readonly INavigator _navigator;
 

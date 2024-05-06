@@ -13,7 +13,6 @@ $packages = @(
 #endif
 #if(presentation == 'mvvm')
     "CommunityToolkit.Mvvm",
-    "PropertyChanged.Fody",
 #endif
     "CSharpMarkup.WinUI.Uno.Toolkit"
 )

@@ -130,13 +130,14 @@
         {
           "condition": "presentation == 'mvvm'",
           "rename": {
+            "AppProjectFolderName.Presentation/Core/BaseViewModel.Mvvm.cs": "AppProjectFolderName.Presentation/Core/BaseViewModel.cs",
             "AppProjectFolderName.Presentation/Example.Mvvm/": "AppProjectFolderName.Presentation/Example/",
             "AppProjectFolderName.Presentation/Readme.Mvvm.md": "AppProjectFolderName.Presentation/Readme.md"
           }
         },
         {
           "condition": "presentation != 'mvvm'",
-          "exclude": [ "AppProjectFolderName.Presentation/Example.Mvvm/**", "AppProjectFolderName.Presentation/Readme.Mvvm.md" ]
+          "exclude": [ "AppProjectFolderName.Presentation/Core/BaseViewModel.Mvvm.cs", "AppProjectFolderName.Presentation/Example.Mvvm/**", "AppProjectFolderName.Presentation/Readme.Mvvm.md" ]
         }
       ]
     }

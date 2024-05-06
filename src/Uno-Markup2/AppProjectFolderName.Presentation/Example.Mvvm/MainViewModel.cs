@@ -2,7 +2,7 @@
 
 namespace $namespacePrefix$.Presentation.Example;
 
-public partial class MainViewModel : ObservableObject
+public partial class MainViewModel : BaseViewModel
 {
     INavigator _navigator;
 

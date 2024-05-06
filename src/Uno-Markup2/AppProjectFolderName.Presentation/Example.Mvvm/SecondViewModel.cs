@@ -1,6 +1,6 @@
 ﻿namespace $namespacePrefix$.Presentation.Example;
 
-public partial class SecondViewModel(Entity entity)
+public partial class SecondViewModel(Entity entity) : BaseViewModel
 {
     public Entity Entity => entity;
 }
