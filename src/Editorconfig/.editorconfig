@@ -1,4 +1,4 @@
-﻿# Version 20240405 - C# 12
+﻿# Version 20240506 - C# 12
 # Origin: see https://github.com/Applicita/Modern.CSharp.Templates/blob/main/Editorconfig.md
 
 # This file does not inherit .editorconfig settings from higher directories - where possible, place it at the root of the repository
@@ -48,6 +48,9 @@ tab_width = 2
 # Indentation and spacing
 indent_size = 4
 tab_width = 4
+
+# See https://github.com/dotnet/roslyn/issues/68413#issuecomment-1943805603
+trim_trailing_whitespace = false
 
 # New line preferences
 insert_final_newline = true # Default: false
