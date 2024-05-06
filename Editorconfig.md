@@ -2,7 +2,7 @@
 
 Complete settings for C# 12 code formatting, style, naming style and analysis.
 Promotes conciseness, readability and leveraging the latest language features.
-(can also be used with C# 10 & 11)
+(can also be used with C# 11 & 10)
 
 Noteworthy: the naming styles do *not* allow an underscore prefix for private fields.
 

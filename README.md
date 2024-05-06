@@ -5,10 +5,10 @@ Templates:
 - **mcs-editorconfig** [doc](https://github.com/Applicita/Modern.CSharp.Templates/blob/main/Editorconfig.md)<br />
   *Settings for C# 12 code formatting, style, naming style and analysis.
 Promotes conciseness, readability and leveraging the latest language features.
-(can also be used with C# 10 & 11)*
+(can also be used with C# 11 & 10)*
 
 - **mcs-uno-markup2** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)<br />
-  *Project that adds concise C# Markup 2 to a Uno Platform 5 Solution (.NET 8/7)*
+  *Project that adds concise C# Markup 2 to a Uno Platform 5.2 Solution (.NET 8/7)*
 
 - **mcs-uno-view** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)<br />
   *C# Markup 2 View + Model item template for use with mcs-uno-markup2 template (.NET 8/7, model type MVUX/MVVM/none)*
