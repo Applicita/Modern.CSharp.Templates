@@ -7,12 +7,16 @@ global using global::System.Net.Http;
 global using global::System.Threading;
 global using global::System.Threading.Tasks;
 
+#if(presentation == 'mvux')
+global using Uno.Extensions.Reactive;
+
+#endif
 #if(presentation == 'mvvm')
 // MVVM presentation pattern:
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using CommunityToolkit.Mvvm.Input;
-#endif
 
+#endif
 // Uno navigation for use in models:
 global using Uno.Extensions.Navigation;
 
