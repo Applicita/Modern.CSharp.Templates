@@ -3,9 +3,9 @@
 Templates:
 - **mcs-editorconfig** [doc](https://github.com/Applicita/Modern.CSharp.Templates/blob/main/Editorconfig.md)
 
-  *Settings for C# 12 code formatting, style, naming style and analysis.
+  *Settings for C# 11 code formatting, style, naming style and analysis.
 Promotes conciseness, readability and leveraging the latest language features.
-(can also be used with C# 11/10)*
+(can also be used with C# 10)*
 
 - **mcs-uno-markup2** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)
 
