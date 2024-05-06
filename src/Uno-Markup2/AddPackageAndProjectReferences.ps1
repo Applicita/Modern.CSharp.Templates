@@ -4,21 +4,27 @@ $appProjectPath    = "AppProjectFolderName/AppProjectFolderName.csproj"
 $markupProjectPath = "AppProjectFolderName.Presentation/AppProjectFolderName.Presentation.csproj"
 
 $packages = @(
-    "CSharpMarkup.WinUI",
-    "CSharpMarkup.WinUI.Uno.Extensions.Navigation",
-    "CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit",
+    @{Name="CSharpMarkup.WinUI"},
+    @{Name="CSharpMarkup.WinUI.Uno.Extensions.Navigation"},
+    @{Name="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit"},
 #if(presentation == 'mvux')
-    "CSharpMarkup.WinUI.Uno.Extensions.Reactive",
-    "Uno.Extensions.Reactive.WinUI",
+    @{Name="CSharpMarkup.WinUI.Uno.Extensions.Reactive"},
+    @{Name="Uno.Extensions.Reactive.WinUI"; Version="4.1.14"},
+    # The Uno.Extensions.Reactive.WinUI version is aligned to the version that is implicitly referenced by the uno.sdk version that is used in dotnet new unoapp
 #endif
 #if(presentation == 'mvvm')
-    "CommunityToolkit.Mvvm",
+    @{Name="CommunityToolkit.Mvvm"},
 #endif
-    "CSharpMarkup.WinUI.Uno.Toolkit"
+    @{Name="CSharpMarkup.WinUI.Uno.Toolkit"}
 )
 
 $packages | Foreach-Object {
-    dotnet add $markupProjectPath package $_ | Select-String -Pattern "warn|error|PackageReference for package"
+    if ($_.Version -eq $null) 
+    { 
+        dotnet add $markupProjectPath package $_.Name | Select-String -Pattern "warn|error|PackageReference for package"
+    } else { 
+        dotnet add $markupProjectPath package $_.Name --version $($_.Version) | Select-String -Pattern "warn|error|PackageReference for package"
+    }
 }
 
 dotnet add $appProjectPath reference $markupProjectPath
