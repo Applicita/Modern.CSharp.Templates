@@ -3,9 +3,9 @@
 Templates:
 - **mcs-editorconfig** [doc](https://github.com/Applicita/Modern.CSharp.Templates/blob/main/Editorconfig.md)
 
-  *Settings for C# 11 code formatting, style, naming style and analysis.
+  *Settings for C# 12 code formatting, style, naming style and analysis.
 Promotes conciseness, readability and leveraging the latest language features.
-(can also be used with C# 10)*
+(can also be used with C# 11/10)*
 
 - **mcs-uno-markup2** [doc](https://github.com/VincentH-Net/CSharpForMarkup#readme)
 
@@ -21,8 +21,8 @@ Promotes conciseness, readability and leveraging the latest language features.
 
 - **mcs-orleans-multiservice** [doc](https://github.com/Applicita/Orleans.Multiservice#readme)
 
-  *Prevent microservices pain with logical service separation for Microsoft Orleans 7*
+  *Prevent microservices pain with logical service separation for Microsoft Orleans 8*
 
-The Orleans templates can be combined with [Orleans.Multitenant](https://github.com/Applicita/Orleans.Multitenant) for secure, flexible tenant separation in Microsoft Orleans 7
+The Orleans templates can be combined with [Orleans.Multitenant](https://github.com/Applicita/Orleans.Multitenant) for secure, flexible tenant separation in Microsoft Orleans 8
 
 [Release Notes](https://github.com/Applicita/Modern.CSharp.Templates/releases/tag/2-0-0)
