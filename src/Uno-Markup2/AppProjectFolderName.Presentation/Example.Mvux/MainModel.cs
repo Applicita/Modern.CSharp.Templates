@@ -2,26 +2,15 @@
 
 namespace $namespacePrefix$.Presentation.Example;
 
-public partial record MainModel
+public partial record MainModel(IStringLocalizer localizer, INavigator navigator)
 {
-    INavigator _navigator;
-
-    public MainModel(
-        IStringLocalizer localizer,
-        INavigator navigator)
-    {
-        _navigator = navigator;
-        Title = "Main";
-        Title += $" - {localizer["ApplicationName"]}";
-    }
-
-    public string? Title { get; }
+    public string? Title { get; } = $"Main primary - {localizer["ApplicationName"]}";
 
     public IState<string> Name => State<string>.Value(this, () => string.Empty);
 
     public async Task GoToSecond()
     {
         var name = await Name;
-        await _navigator.NavigateViewModelAsync<BindableSecondModel>(this, data: new Entity(name!));
+        await navigator.NavigateViewModelAsync<BindableSecondModel>(this, data: new Entity(name!));
     }
 }

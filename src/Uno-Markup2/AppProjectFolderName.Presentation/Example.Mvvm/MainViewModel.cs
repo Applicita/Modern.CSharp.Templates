@@ -2,29 +2,20 @@
 
 namespace $namespacePrefix$.Presentation.Example;
 
-public partial class MainViewModel : BaseViewModel
+public partial class MainViewModel(IStringLocalizer localizer, INavigator navigator) : BaseViewModel
 {
-    INavigator _navigator;
+    public string? Title { get; } = $"Main - {localizer["ApplicationName"]}";
 
-    public MainViewModel(
-        IStringLocalizer localizer,
-        INavigator navigator)
-    {
-        _navigator = navigator;
-        Title = "Main";
-        Title += $" - {localizer["ApplicationName"]}";
-    }
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(ButtonText))]
+    string? name;
 
-    public string? Title { get; }
-
-    public string? Name { get; set; }
-
-    // Example of a calculated property - these are automatically updated by PropertyChanged.Fody
+    // Example of a calculated property
     public string ButtonText => "Go to Second Page " + (string.IsNullOrWhiteSpace(Name) ? "anonymously" : $"as {Name}");
 
     [RelayCommand]
     async Task GoToSecond()
     {
-        await _navigator.NavigateViewModelAsync<SecondViewModel>(this, data: new Entity(Name ?? ""));
+        await navigator.NavigateViewModelAsync<SecondViewModel>(this, data: new Entity(Name ?? ""));
     }
 }
