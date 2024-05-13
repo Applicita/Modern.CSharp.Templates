@@ -1,5 +1,5 @@
 ﻿# <img src="src/CSharp-Toolkit-Icon.png" alt="C# Toolkit" width="64px" /> Modern.CSharp.Templates
-A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new) for C# 12/11, .NET 8/7, Microsoft Orleans 7, Windows App SDK and Uno Platform 5
+A toolkit of modern [dotnet new templates](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new) for C# 12/11, .NET 8/7, Microsoft Orleans 8, Windows App SDK and Uno Platform 5.2
 
 Templates:
 - **mcs-editorconfig** [doc](https://github.com/Applicita/Modern.CSharp.Templates/blob/main/Editorconfig.md)<br />
